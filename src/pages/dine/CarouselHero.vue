@@ -8,7 +8,7 @@
     </div>
     <div class=" carousel-inner relative overflow-hidden m-0" style="height:45rem" >
       <div v-for="(img, i) in images" :id="`slide-${i}`" :key="i" :class="`${active === i ? 'active' : 'left-full'}`"
-           class="carousel-item float-left  inset-0 relative w-full transform transition translate-y-1 duration-300 ease-in-out">
+           class="carousel-item float-left  inset-0 relative w-full transform transition translate-y-1 duration-1000 ease-in-out">
         <img class="w-full adjust slider" :src="img" alt="First slide" />
       </div>
       <p class="absolute title text-5xl text-white">{{text}}</p>
