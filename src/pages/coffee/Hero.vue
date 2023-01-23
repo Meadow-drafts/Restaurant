@@ -70,13 +70,13 @@
           "
                 >
                   <li class=" text-2xl font-bold text-white hover:text-blue-400">
-                    Home
+                    <a href="#">Home</a>
                   </li>
                   <li class=" text-2xl font-bold text-white hover:text-blue-400">
-                    About
+                    <a href="#about">About</a>
                   </li>
                   <li class=" text-2xl font-bold text-white hover:text-blue-400">
-                    Blogs
+                    <a href="#menu">Menu</a>
                   </li>
                   <li class=" text-2xl font-bold text-white hover:text-blue-400">
                     Contact Us
@@ -91,26 +91,18 @@
             class="absolute top-0 w-full h-full">
 
         </div>
-        <div class="container justify-between flex flex-row relative mx-auto">
-          <div class="items-center flex flex-wrap">
-            <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-              <div class="pr-12">
-                <h1 class="text-white font-semibold text-7xl">Welcome To Expresso Yourself</h1>
+        <div class="container flex flex-row relative ">
+          <div class=" flex-row mt-10">
+            <h1 style="color:#c49b63" class=" text-7xl">Welcome To Expresso Yourself</h1>
                 <p
                     class="mt-4 text-2xl text-yellow-200"
                 >Creamy and Hot To serve</p>
-              </div>
-            </div>
           </div>
-          <div class="items-center flex flex-wrap">
-            <div class="w-full lg:w-6/12 px-4 ml-auto mr-0 text-center">
-              <div class="pr-12">
-                <img src="src/images/spilling-coffe.png" style="height: 30rem; width:100rem;"/>
+          <div class=" flex flex-col">
+                <img src="src/images/spilling-coffe.png" style="height: 30rem; width:50rem;"/>
                 <p
                     class="mt-4 text-2xl text-yellow-200"
                 >Creamy and Hot To serve</p>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -193,7 +185,7 @@
       </div>
     </div>
 <!--About us Section-->
-    <div class=" ">
+    <div id="about" class=" ">
       <div class=" h-full text-gray-800">
         <div class="flex  flex-wrap  h-full">
 <!--          about us img-->
@@ -222,7 +214,7 @@
     <img :src="services" alt="">
   </div>
 <!--    menu-->
-    <div class="flex relative items-center w-screen min-h-screen" style="font-family: 'Muli', sans-serif;">
+    <div id="menu" class="flex relative items-center w-screen min-h-screen" style="font-family: 'Muli', sans-serif;">
       <div class="container ml-auto mr-auto flex justify-center flex-wrap items-start">
         <div class="w-full pl-5 lg:pl-2 mb-4 mt-4">
           <h1 class="text-3xl lg:text-4xl text-gray-700 font-extrabold">
@@ -536,7 +528,7 @@ export default {
 
 <style>
 .main{
-  background-image:url("../../images/coffee-bg.avif");
+  background-image:url("../../images/background-img.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
