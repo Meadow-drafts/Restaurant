@@ -91,11 +91,21 @@
             class="absolute top-0 w-full h-full">
 
         </div>
-        <div class="container relative mx-auto">
+        <div class="container justify-between flex flex-row relative mx-auto">
           <div class="items-center flex flex-wrap">
             <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
               <div class="pr-12">
-                <h1 class="text-black font-semibold text-7xl">Welcome To Expresso Yourself</h1>
+                <h1 class="text-white font-semibold text-7xl">Welcome To Expresso Yourself</h1>
+                <p
+                    class="mt-4 text-2xl text-yellow-200"
+                >Creamy and Hot To serve</p>
+              </div>
+            </div>
+          </div>
+          <div class="items-center flex flex-wrap">
+            <div class="w-full lg:w-6/12 px-4 ml-auto mr-0 text-center">
+              <div class="pr-12">
+                <img src="src/images/spilling-coffe.png" style="height: 30rem; width:100rem;"/>
                 <p
                     class="mt-4 text-2xl text-yellow-200"
                 >Creamy and Hot To serve</p>
@@ -518,7 +528,7 @@ export default {
   data(){
     return{
     services:'./src/images/services.png',
-    heroImg:'./src/images/heroImg.avif'
+    heroImg:'./src/images/coffee-hero.avif'
     }
   }
 };
@@ -526,13 +536,13 @@ export default {
 
 <style>
 .main{
-  background-image:url("../../images/background-img.webp");
+  background-image:url("../../images/coffee-bg.avif");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 .hero{
-  background-image:url("../../images/heroImg.avif");
+  background-color:#000000;
   background-repeat: no-repeat;
   background-size: cover;
 }
