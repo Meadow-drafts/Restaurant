@@ -39,7 +39,7 @@ export default {
   display: none;
 }
 .display{
-  background-image:url("../../images/background-img.webp");
+
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
