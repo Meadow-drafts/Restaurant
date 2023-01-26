@@ -13,7 +13,7 @@
       </div>
       <p class="absolute title text-5xl text-white">{{text}}</p>
 <!--      header-->
-      <header class="absolute w-full text-3xl bg-transparent border-b-2 border-black">
+      <header class="w-full text-3xl bg-transparent border-b-2 shadow-lg border-gray-200">
         <div>
           <div class="bg-transparent text-3xl">
             <nav
@@ -80,74 +80,16 @@
                   About
                 </li>
                 <li class=" text-2xl font-bold text-white hover:text-blue-400">
-                  Blogs
+                  Services
                 </li>
                 <li class=" text-2xl font-bold text-white hover:text-blue-400">
-                  Contact Us
+                  Our Menu
                 </li>
               </ul>
             </nav>
           </div>
         </div>
       </header>
-
-<!--      our menu-->
-      <div class="absolute images flex-row flex justify-center">
-        <div class="mr-10">
-          <div class="w-full  mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300">
-            <figure class="">
-              <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvZmZlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt=""
-                   class="h-32 w-32 menu-img" />
-            </figure>
-            <div style="color: black" class=" p-4 flex flex-col">
-              <div>
-                <h5 class="text-black text-2xl font-bold leading-none">
-                  Expresso
-                </h5>
-                <span class="text-xs text-gray-400 leading-none">And then there was Pro.</span>
-              </div>
-              <div class="flex items-center">
-                <div class="text-lg text-yellow-700 font-light">
-                  $1099,00
-                </div>
-                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mr-10">
-          <div class="w-full  mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300">
-            <figure class="">
-              <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvZmZlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" alt=""
-                   class="h-32 w-32 menu-img" />
-            </figure>
-            <div style="color: black" class=" p-4 flex flex-col">
-              <div>
-                <h5 class="text-black text-2xl font-bold leading-none">
-                  Expresso
-                </h5>
-                <span class="text-xs text-gray-400 leading-none">And then there was Pro.</span>
-              </div>
-              <div class="flex items-center">
-                <div class="text-lg text-yellow-700 font-light">
-                  $1099,00
-                </div>
-                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 </div>
 

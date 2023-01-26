@@ -6,15 +6,15 @@
     <div
         class="container ml-auto mr-auto flex justify-center flex-wrap items-start"
     >
-      <div class=" ">
-        <div class="h-full text-gray-800">
+      <div class="py-5">
+        <div class="h-full overflow-y-auto text-gray-800">
           <div class="flex flex-wrap h-full">
             <div
                 class="grow-0 shrink-1 md:shrink-0 lg:items-left relative basis-auto w-50 mb-12 md:mb-0"
             >
               <img
                   src="https://images.unsplash.com/photo-1513267048331-5611cad62e41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvZmZlZSUyMHNob3B8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
-                  class="w-full"
+                  class="w-full rounded-lg shadow-md"
                   alt="Sample image"
               />
             </div>
@@ -38,7 +38,7 @@
       <!--      our services-->
       <div class="py-5">
         <main class="h-full overflow-y-auto">
-          <p class="text-lg font-medium">our services</p>
+          <p class="text-4xl text-center font-medium m-5 border-b-2 border-gray-200 shadow-b-lg">Our Services</p>
           <div class="container mx-auto grid">
             <!-- Cards -->
             <div class="grid gap-6 mb-8 md:grid-cols-3 xl:grid-cols-3">
@@ -141,6 +141,7 @@
 
       <div class="py-5">
         <main class="h-full overflow-y-auto">
+          <p class="text-4xl text-center font-medium m-5 border-b-2 border-gray-200 shadow-b-lg">Our Stats</p>
           <div class="container mx-auto grid">
             <!-- Cards -->
             <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
@@ -257,21 +258,20 @@
         </main>
       </div>
       <!--menu section-->
-      <div class="w-full pl-5 lg:pl-2 mb-4 mt-4">
-        <h1 class="text-3xl lg:text-4xl text-gray-700 font-extrabold">
-          Our Menu
-        </h1>
+      <div class=" w-full pl-5 lg:pl-2 mb-4 mt-4">
+        <p class="text-4xl text-center font-medium m-5 border-b-2 border-gray-200 shadow-b-lg">Our Menu</p>
+
       </div>
-      <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+      <div class="menu grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
         <div class="mr-10">
           <div
-              class="w-full mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300"
+              class=" w-full mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300"
           >
             <figure class="">
               <img
                   src="https://images.unsplash.com/photo-1461555806864-d8b528023e7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZCUyMG9uJTIwd2hpdGUlMjBwbGF0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60"
                   alt=""
-                  class="h-32 w-32 menu-img"
+                  class=" h-32 w-32 menu-img"
               />
             </figure>
             <div style="color: black" class="p-4 flex flex-col">
@@ -404,7 +404,7 @@
           </div>
         </div>
       </div>
-      <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+      <div class="menu grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
         <div class="mr-10">
           <div
               class="w-full mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300"
@@ -709,6 +709,7 @@ export default {
 *::-webkit-scrollbar {
   display: none;
 }
-* {
+.menu {
+  position: relative;
 }
 </style>
