@@ -38,12 +38,13 @@
       <!--      our services-->
       <div class="py-5">
         <main class="h-full overflow-y-auto">
+          <p class="text-lg font-medium">our services</p>
           <div class="container mx-auto grid">
             <!-- Cards -->
             <div class="grid gap-6 mb-8 md:grid-cols-3 xl:grid-cols-3">
               <!-- Card -->
               <div
-                  class="flex items-center p-4 rounded-lg shadow-xs bg-gray-800"
+                  class="flex items-center p-4 rounded-lg shadow-xs bg-gray-500"
               >
                 <div>
                   <div
@@ -63,7 +64,7 @@
                     Birthday Parties
                   </p>
                   <p
-                      class="text-lg font-semibold text-gray-700 dark:text-gray-200"
+                      class="text-lg font-semibold text-black"
                   >
                     Even the all-powerful Pointing has no control about the
                     blind texts it is an almost unorthographic.
@@ -72,7 +73,7 @@
               </div>
               <!-- Card -->
               <div
-                  class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+                  class="flex items-center p-4  rounded-lg shadow-xs bg-gray-500"
               >
                 <div>
                   <div
@@ -89,12 +90,12 @@
                     </svg>
                   </div>
                   <p
-                      class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                      class="mb-2 text-sm font-medium text-gray-400"
                   >
                     Birthday Parties
                   </p>
                   <p
-                      class="text-lg font-semibold text-gray-700 dark:text-gray-200"
+                      class="text-lg font-semibold text-black"
                   >
                     Even the all-powerful Pointing has no control about the
                     blind texts it is an almost unorthographic.
@@ -103,7 +104,7 @@
               </div>
               <!-- Card -->
               <div
-                  class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+                  class="flex items-center p-4 rounded-lg shadow-xs bg-gray-500"
               >
                 <div>
                   <div
@@ -120,12 +121,12 @@
                     </svg>
                   </div>
                   <p
-                      class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                      class="mb-2 text-sm font-medium text-gray-400"
                   >
                     Birthday Parties
                   </p>
                   <p
-                      class="text-lg font-semibold text-gray-700 dark:text-gray-200"
+                      class="text-lg font-semibold text-black"
                   >
                     Even the all-powerful Pointing has no control about the
                     blind texts it is an almost unorthographic.
@@ -145,10 +146,10 @@
             <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
               <!-- Card -->
               <div
-                  class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+                  class="flex items-center p-4 bg-black rounded-lg shadow-xs"
               >
                 <div
-                    class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500"
+                    class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full "
                 >
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -163,7 +164,7 @@
                     My Blog Posts
                   </p>
                   <p
-                      class="text-lg font-semibold text-gray-700 dark:text-gray-200"
+                      class="text-lg font-semibold text-gray-200"
                   >
                     10
                   </p>
@@ -171,10 +172,10 @@
               </div>
               <!-- Card -->
               <div
-                  class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+                  class="flex items-center p-4 bg-black rounded-lg shadow-xs"
               >
                 <div
-                    class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500"
+                    class="p-3 mr-4 text-green-500 bg-green-100 rounded-full"
                 >
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -186,12 +187,12 @@
                 </div>
                 <div>
                   <p
-                      class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                      class="mb-2 text-sm font-medium text-gray-600"
                   >
                     My Forum Posts
                   </p>
                   <p
-                      class="text-lg font-semibold text-gray-700 dark:text-gray-200"
+                      class="text-lg font-semibold text-gray-200 "
                   >
                     24
                   </p>
@@ -199,10 +200,10 @@
               </div>
               <!-- Card -->
               <div
-                  class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+                  class="flex items-center p-4 rounded-lg shadow-xs bg-black"
               >
                 <div
-                    class="p-3 mr-4 text-teal-500 bg-teal-100 rounded-full dark:text-teal-100 dark:bg-teal-500"
+                    class="p-3 mr-4 text-teal-500 bg-teal-100 rounded-full "
                 >
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -214,12 +215,12 @@
                 </div>
                 <div>
                   <p
-                      class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                      class="mb-2 text-sm font-medium text-gray-600"
                   >
                     My Tutorials
                   </p>
                   <p
-                      class="text-lg font-semibold text-gray-700 dark:text-gray-200"
+                      class="text-lg font-semibold text-gray-200"
                   >
                     376
                   </p>
@@ -227,10 +228,10 @@
               </div>
               <!-- Card -->
               <div
-                  class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800"
+                  class="flex items-center p-4 bg-black rounded-lg shadow-xs "
               >
                 <div
-                    class="p-3 mr-4 text-blue-500 bg-blue-100 rounded-full dark:text-blue-100 dark:bg-blue-500"
+                    class="p-3 mr-4 text-blue-500 bg-blue-100 rounded-full"
                 >
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path
@@ -240,12 +241,12 @@
                 </div>
                 <div>
                   <p
-                      class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                      class="mb-2 text-sm font-medium text-gray-600"
                   >
                     My Purchases
                   </p>
                   <p
-                      class="text-lg font-semibold text-gray-700 dark:text-gray-200"
+                      class="text-lg font-semibold text-gray-200"
                   >
                     35
                   </p>
@@ -282,6 +283,18 @@
                 >And then there was Pro.</span
                 >
               </div>
+              <div class="flex items-center">
+                <div class="text-lg text-yellow-700 font-light">
+                  $1099,00
+                </div>
+                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
@@ -305,6 +318,18 @@
                 >And then there was Pro.</span
                 >
               </div>
+              <div class="flex items-center">
+                <div class="text-lg text-yellow-700 font-light">
+                  $1099,00
+                </div>
+                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
@@ -328,6 +353,18 @@
                 >And then there was Pro.</span
                 >
               </div>
+              <div class="flex items-center">
+                <div class="text-lg text-yellow-700 font-light">
+                  $1099,00
+                </div>
+                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
@@ -351,6 +388,18 @@
                 >And then there was Pro.</span
                 >
               </div>
+              <div class="flex items-center">
+                <div class="text-lg text-yellow-700 font-light">
+                  $1099,00
+                </div>
+                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
@@ -376,6 +425,18 @@
                 >And then there was Pro.</span
                 >
               </div>
+              <div class="flex items-center">
+                <div class="text-lg text-yellow-700 font-light">
+                  $1099,00
+                </div>
+                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+
             </div>
           </div>
         </div>
@@ -398,6 +459,17 @@
                 <span class="text-xs text-white leading-none"
                 >And then there was Pro.</span
                 >
+              </div>
+              <div class="flex items-center">
+                <div class="text-lg text-yellow-700 font-light">
+                  $1099,00
+                </div>
+                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
@@ -424,6 +496,18 @@
               </div>
             </div>
           </div>
+          <div class="flex items-center">
+            <div class="text-lg text-yellow-700 font-light">
+              $1099,00
+            </div>
+            <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+
         </div>
         <div class="mr-10">
           <div
@@ -444,6 +528,17 @@
                 <span class="text-xs text-white leading-none"
                 >And then there was Pro.</span
                 >
+              </div>
+              <div class="flex items-center">
+                <div class="text-lg text-yellow-700 font-light">
+                  $1099,00
+                </div>
+                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
