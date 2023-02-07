@@ -1,5 +1,5 @@
 
-## Usage
+## Purpose
 
 This project was built with [Vue 3](https://v3.vuejs.org/) and [Vite](https://vitejs.dev/).
 It is meant to manage a restaurant system
