@@ -1,7 +1,7 @@
 <template>
   <div class="grid h-screen place-items-center">
-    <div class="rounded px-8 pt-6 pb-8 mb-4 shadow-md">
-      <h3 class="mb-5 text-lg font-medium text-yellow-900">
+    <div class="rounded-lg border-2 border-gray-200 bg-gray-300 p-10 mb-4 shadow-2xl hover:bg-gray-200">
+      <h3 class="mb-10 text-lg font-medium text-yellow-900">
         Which Restaurant will you like to visit today?
       </h3>
       <ul class="grid w-full gap-6 md:grid-cols-2">

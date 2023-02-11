@@ -6,7 +6,7 @@
         <li v-for="(img, i) in images" :key="i" class="md:w-4 md:h-4 bg-gray-300 rounded-full cursor-pointer"></li>
       </ol>
     </div>
-    <div class=" carousel-inner relative overflow-hidden m-0" style="height:45rem" >
+    <div class=" carousel-inner relative overflow-hidden m-0" style="height:60rem" >
       <div v-for="(img, i) in images" :id="`slide-${i}`" :key="i" :class="`${active === i ? 'active' : 'left-full'}`"
            class="carousel-item float-left  inset-0 relative w-full transform transition translate-y-1 duration-1000 ease-in-out">
         <img class="w-full adjust slider" :src="img" alt="First slide" />

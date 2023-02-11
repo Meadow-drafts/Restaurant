@@ -1,28 +1,17 @@
 <template>
-  <div
-      class="flex items-center w-screen min-h-screen"
-      style="font-family: 'Muli', sans-serif"
-  >
-    <div
-        class="container ml-auto mr-auto flex justify-center flex-wrap items-start"
-    >
+  <div class="flex items-center w-screen min-h-screen" style="font-family: 'Muli', sans-serif">
+    <div class="container ml-auto mr-auto flex justify-center flex-wrap items-start">
       <div class="py-5">
         <div class="h-full overflow-y-auto text-gray-800">
           <div class="flex flex-wrap h-full">
-            <div
-                class="grow-0 shrink-1 md:shrink-0 lg:items-left relative basis-auto w-50 mb-12 md:mb-0"
-            >
+            <div class="top-0 grow-0 shrink-1 md:shrink-0 lg:items-left relative basis-auto w-50 mb-12 md:mb-0">
               <img
                   src="https://images.unsplash.com/photo-1513267048331-5611cad62e41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvZmZlZSUyMHNob3B8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
                   class="w-full rounded-lg shadow-md"
-                  alt="Sample image"
-              />
+                  alt="Sample image"/>
             </div>
-
             <!--        about us section-->
-            <div
-                class="xl:ml-20 p-5 ml-24 mt-10 text-white xs:w-2/3 w-1/3 mb-12 absolute bg-black opacity-75 rounded-lg"
-            >
+            <div class="xl:ml-20 p-5 ml-24 mt-10 text-white xs:w-2/3 w-1/3 mb-12 absolute bg-black opacity-75 rounded-lg">
               <h2>Our Story</h2>
               <p>
                 On her way she met a copy. The copy warned the Little Blind
@@ -34,14 +23,13 @@
           </div>
         </div>
       </div>
-
       <!--      our services-->
       <div class="py-5">
         <main class="h-full overflow-y-auto">
           <p class="text-4xl text-center font-medium m-5 border-b-2 border-gray-200 shadow-b-lg">Our Services</p>
           <div class="container mx-auto grid">
             <!-- Cards -->
-            <div class="grid gap-6 mb-8 md:grid-cols-3 xl:grid-cols-3">
+            <div class="grid gap-6 mb-8 grid-cols-2 xl:grid-cols-4">
               <!-- Card -->
               <div
                   class="flex items-center p-4 rounded-lg shadow-xs bg-gray-500"
@@ -133,18 +121,48 @@
                   </p>
                 </div>
               </div>
+              <!-- Card -->
+              <div
+                  class="flex items-center p-4 rounded-lg shadow-xs bg-gray-500"
+              >
+                <div>
+                  <div
+                      class="p-3 mr-4 text-center text-orange-500 rounded-full"
+                  >
+                    <svg
+                        class="w-5 h-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                    >
+                      <path
+                          d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p
+                      class="mb-2 text-sm font-medium text-gray-400"
+                  >
+                    Birthday Parties
+                  </p>
+                  <p
+                      class="text-lg font-semibold text-black"
+                  >
+                    Even the all-powerful Pointing has no control about the
+                    blind texts it is an almost unorthographic.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </main>
       </div>
       <!--    info card counter section-->
-
       <div class="py-5">
         <main class="h-full overflow-y-auto">
           <p class="text-4xl text-center font-medium m-5 border-b-2 border-gray-200 shadow-b-lg">Our Stats</p>
           <div class="container mx-auto grid">
             <!-- Cards -->
-            <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+            <div class="grid gap-6 mb-8 grid-cols-2 xl:grid-cols-4">
               <!-- Card -->
               <div
                   class="flex items-center p-4 bg-black rounded-lg shadow-xs"
@@ -262,10 +280,10 @@
         <p class="text-4xl text-center font-medium m-5 border-b-2 border-gray-200 shadow-b-lg">Our Menu</p>
 
       </div>
-      <div class="menu grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+      <div class="menu grid gap-6 mb-8 grid-cols-2 xl:grid-cols-4">
         <div class="mr-10">
           <div
-              class=" w-full mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300"
+              class=" w-full mb-5 rounded-lg xl:m-h-40  transform hover:translate-y-2 transition duration-300"
           >
             <figure class="">
               <img
@@ -404,7 +422,7 @@
           </div>
         </div>
       </div>
-      <div class="menu grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+      <div class="menu grid gap-6 mb-8 grid-cols-2 xl:grid-cols-4">
         <div class="mr-10">
           <div
               class="w-full mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300"

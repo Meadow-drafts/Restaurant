@@ -10,13 +10,17 @@
 <script>
 import carouselHero from "./CarouselHero.vue";
 import ShowCaseMenu from "./ShowCaseMenu.vue";
-
+import axios from 'axios'
 export default {
   name:'dineIndex',
   data(){
     return{
 
     }
+  },
+  async mounted(){
+ let result = await axios.get(`http://localhost:8000/restaurant`);
+ console.log(result)
   },
   components:{
     carouselHero,
@@ -31,7 +35,7 @@ export default {
 /*  height: 10%;*/
 /*}*/
 *{
-  font-family: cursive;
+  /* font-family: cursive; */
   font-size: small;
 }
 /* For Webkit-based browsers (Chrome, Safari and Opera) */
