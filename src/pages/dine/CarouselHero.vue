@@ -11,7 +11,7 @@
            class="carousel-item float-left  inset-0 relative w-full transform transition translate-y-1 duration-1000 ease-in-out">
         <img class="w-full adjust slider" :src="img" alt="First slide" />
       </div>
-      <p class="absolute title text-5xl text-white">{{text}}</p>
+      <p class="absolute font-bold title text-7xl text-white text-center" style="font-family: cursive;">{{text}}</p>
 <!--      header-->
       <header class="w-full text-3xl bg-transparent border-b-2 shadow-lg border-gray-200">
         <div>
@@ -109,7 +109,7 @@ export default{
       "https://preview.colorlib.com/theme/feliciano/images/bg_3.jpg.webp",
       "https://preview.colorlib.com/theme/feliciano/images/bg_2.jpg.webp"
     ],
-    text:'Fancy Meals',
+    text:'Dine in',
     active: 0,
     showMenu: false,
   }),

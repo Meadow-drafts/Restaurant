@@ -18,10 +18,10 @@ const router = createRouter({
       component: RestoOptions
     },
     {
-      path: '/hero',
+      path: '/expresso',
       component: Hero
     },
- {
+    {
       path: '/dine',
       component: dineIndex
     },

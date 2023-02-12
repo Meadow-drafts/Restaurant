@@ -281,30 +281,27 @@
 
       </div>
       <div class="menu grid gap-6 mb-8 grid-cols-2 xl:grid-cols-4">
-        <div class="mr-10">
+        <div v-for="data in menus" :key="data" class="mr-10">
           <div
               class=" w-full mb-5 rounded-lg xl:m-h-40  transform hover:translate-y-2 transition duration-300"
           >
             <figure class="">
               <img
-                  src="https://images.unsplash.com/photo-1461555806864-d8b528023e7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZCUyMG9uJTIwd2hpdGUlMjBwbGF0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60"
+                  :src="data.img_url"
                   alt=""
                   class=" h-32 w-32 menu-img"
               />
             </figure>
             <div style="color: black" class="p-4 flex flex-col">
               <div>
-                <h5 class="text-black text-2xl font-bold leading-none">
-                  Expresso
+                <h5 class="text-black text-2xl font-light leading-none">
+                  {{data.name}}
                 </h5>
-                <span class="text-xs text-white leading-none"
-                >And then there was Pro.</span
-                >
+                
               </div>
               <div class="flex items-center">
-                <div class="text-lg text-yellow-700 font-light">
-                  $1099,00
-                </div>
+                <div class="text-lg text-yellow-700 font-bold">
+                  {{data.price}} XAF                </div>
                 <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
                     <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -316,252 +313,7 @@
             </div>
           </div>
         </div>
-        <div class="mr-10">
-          <div
-              class="w-full mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300"
-          >
-            <figure class="">
-              <img
-                  src="https://media.istockphoto.com/id/173632365/photo/two-eggs-over-easy-with-bacon-on-white-plate.jpg?b=1&s=170667a&w=0&k=20&c=0aLCIUnk14hSXr9eAflP3R46VOhiGyYR71kB84O7r1Q="
-                  alt=""
-                  class="h-32 w-32 menu-img"
-              />
-            </figure>
-            <div style="color: black" class="p-4 flex flex-col">
-              <div>
-                <h5 class="text-black text-2xl font-bold leading-none">
-                  Expresso
-                </h5>
-                <span class="text-xs text-white leading-none"
-                >And then there was Pro.</span
-                >
-              </div>
-              <div class="flex items-center">
-                <div class="text-lg text-yellow-700 font-light">
-                  $1099,00
-                </div>
-                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-              </div>
-
-            </div>
-          </div>
         </div>
-        <div class="mr-10">
-          <div
-              class="w-full mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300"
-          >
-            <figure class="">
-              <img
-                  src="https://media.istockphoto.com/id/155284180/photo/burger.jpg?b=1&s=170667a&w=0&k=20&c=jfEi17cXHDm-cAobDww6UeOz3lR1EHe9RQthDuS5oUQ="
-                  alt=""
-                  class="h-32 w-32 menu-img"
-              />
-            </figure>
-            <div style="color: black" class="p-4 flex flex-col">
-              <div>
-                <h5 class="text-black text-2xl font-bold leading-none">
-                  Expresso
-                </h5>
-                <span class="text-xs text-white leading-none"
-                >And then there was Pro.</span
-                >
-              </div>
-              <div class="flex items-center">
-                <div class="text-lg text-yellow-700 font-light">
-                  $1099,00
-                </div>
-                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="mr-10">
-          <div
-              class="w-full mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300"
-          >
-            <figure class="">
-              <img
-                  src="https://media.istockphoto.com/id/173632365/photo/two-eggs-over-easy-with-bacon-on-white-plate.jpg?b=1&s=170667a&w=0&k=20&c=0aLCIUnk14hSXr9eAflP3R46VOhiGyYR71kB84O7r1Q="
-                  alt=""
-                  class="h-32 w-32 menu-img"
-              />
-            </figure>
-            <div style="color: black" class="p-4 flex flex-col">
-              <div>
-                <h5 class="text-black text-2xl font-bold leading-none">
-                  Expresso
-                </h5>
-                <span class="text-xs text-white leading-none"
-                >And then there was Pro.</span
-                >
-              </div>
-              <div class="flex items-center">
-                <div class="text-lg text-yellow-700 font-light">
-                  $1099,00
-                </div>
-                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="menu grid gap-6 mb-8 grid-cols-2 xl:grid-cols-4">
-        <div class="mr-10">
-          <div
-              class="w-full mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300"
-          >
-            <figure class="">
-              <img
-                  src="https://images.unsplash.com/photo-1461555806864-d8b528023e7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZCUyMG9uJTIwd2hpdGUlMjBwbGF0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1000&q=60"
-                  alt=""
-                  class="h-32 w-32 menu-img"
-              />
-            </figure>
-            <div style="color: black" class="p-4 flex flex-col">
-              <div>
-                <h5 class="text-black text-2xl font-bold leading-none">
-                  Expresso
-                </h5>
-                <span class="text-xs text-white leading-none"
-                >And then there was Pro.</span
-                >
-              </div>
-              <div class="flex items-center">
-                <div class="text-lg text-yellow-700 font-light">
-                  $1099,00
-                </div>
-                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="mr-10">
-          <div
-              class="w-full mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300"
-          >
-            <figure class="">
-              <img
-                  src="https://media.istockphoto.com/id/173632365/photo/two-eggs-over-easy-with-bacon-on-white-plate.jpg?b=1&s=170667a&w=0&k=20&c=0aLCIUnk14hSXr9eAflP3R46VOhiGyYR71kB84O7r1Q="
-                  alt=""
-                  class="h-32 w-32 menu-img"
-              />
-            </figure>
-            <div style="color: black" class="p-4 flex flex-col">
-              <div>
-                <h5 class="text-black text-2xl font-bold leading-none">
-                  Expresso
-                </h5>
-                <span class="text-xs text-white leading-none"
-                >And then there was Pro.</span
-                >
-              </div>
-              <div class="flex items-center">
-                <div class="text-lg text-yellow-700 font-light">
-                  $1099,00
-                </div>
-                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mr-10">
-          <div
-              class="w-full mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300"
-          >
-            <figure class="">
-              <img
-                  src="https://media.istockphoto.com/id/155284180/photo/burger.jpg?b=1&s=170667a&w=0&k=20&c=jfEi17cXHDm-cAobDww6UeOz3lR1EHe9RQthDuS5oUQ="
-                  alt=""
-                  class="h-32 w-32 menu-img"
-              />
-            </figure>
-            <div style="color: black" class="p-4 flex flex-col">
-              <div>
-                <h5 class="text-black text-2xl font-bold leading-none">
-                  Expresso
-                </h5>
-                <span class="text-xs text-white leading-none"
-                >And then there was Pro.</span
-                >
-              </div>
-            </div>
-          </div>
-          <div class="flex items-center">
-            <div class="text-lg text-yellow-700 font-light">
-              $1099,00
-            </div>
-            <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-          </div>
-
-        </div>
-        <div class="mr-10">
-          <div
-              class="w-full mb-5 rounded-lg m-h-40 transform hover:translate-y-2 transition duration-300"
-          >
-            <figure class="">
-              <img
-                  src="https://media.istockphoto.com/id/173632365/photo/two-eggs-over-easy-with-bacon-on-white-plate.jpg?b=1&s=170667a&w=0&k=20&c=0aLCIUnk14hSXr9eAflP3R46VOhiGyYR71kB84O7r1Q="
-                  alt=""
-                  class="h-32 w-32 menu-img"
-              />
-            </figure>
-            <div style="color: black" class="p-4 flex flex-col">
-              <div>
-                <h5 class="text-black text-2xl font-bold leading-none">
-                  Expresso
-                </h5>
-                <span class="text-xs text-white leading-none"
-                >And then there was Pro.</span
-                >
-              </div>
-              <div class="flex items-center">
-                <div class="text-lg text-yellow-700 font-light">
-                  $1099,00
-                </div>
-                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
-                    <line x1="12" y1="5" x2="12" y2="19"></line>
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <footer class="bg-black h-1/6">
@@ -712,11 +464,22 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: "ShowCaseMenu",
   data() {
-    return {};
+    return {
+      menus:[],
+    }
   },
+  async mounted() {
+    await axios.get("http://localhost:8000/resto-meal-show/3"
+    ).then((response)=>{
+      console.log(response.data);
+      this.menus = response.data;
+
+    })
+  }
 };
 </script>
 
