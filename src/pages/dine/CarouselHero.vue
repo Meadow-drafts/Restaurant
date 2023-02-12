@@ -84,12 +84,52 @@
                 </li>
                 <li class=" text-2xl font-bold text-white hover:text-blue-400">
                   Our Menu
+                </li>  
+                <button @click="detailModal">
+                  <li class=" text-2xl font-bold text-white hover:text-blue-400">
+                  Cart
                 </li>
+                </button>              
+                
               </ul>
             </nav>
           </div>
         </div>
       </header>
+      <transition name="bounce" class="right-40 top-24 fixed">  
+        <div v-if="isShowDetails" class="">          
+          <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 ">
+              <div class="flex items-center justify-between mb-4">
+                  <h5 class="text-xl font-bold leading-none text-gray-900 e">Latest Customers</h5>
+                  <a href="#" class="text-sm font-medium text-blue-600 hover:underline ">
+                      View all
+                  </a>
+            </div>
+            <div class="flow-root">
+                  <ul v-for="data in reservations" :key="data" role="list" class="divide-y divide-gray-200 ">
+                      <li class="py-3 sm:py-4">
+                          <div class="flex items-center space-x-4">
+                              <div class="flex-shrink-0">
+                                  <img class="w-8 h-8 rounded-full" src="">
+                              </div>
+                              <div class="flex-1 min-w-0">
+                                  <p class="text-sm font-medium text-gray-900 truncate ">
+                                      Neil Sims
+                                  </p>
+                                  <p class="text-sm text-gray-500 truncate">
+                                      email@windster.com
+                                  </p>
+                              </div>
+                              <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
+                                  $320
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+            </div>
+          </div>
+        </div>      
+    </transition>
     </div>
 </div>
 
@@ -99,7 +139,7 @@
 <script>
 
 import Header from "../../partials/Header.vue";
-
+import axios from "axios";
 export default{
   name:'carouselHero',
   components: {Header},
@@ -112,7 +152,15 @@ export default{
     text:'Dine in',
     active: 0,
     showMenu: false,
+    showDetails:false,
+    reservations:[],
+
   }),
+  computed:{
+    isShowDetails(){
+      return this.showDetails;
+    }
+  },
   mounted() {
     let i = 0;
     setInterval(() => {
@@ -122,6 +170,18 @@ export default{
       this.active = i;
       i++;
     }, 2000);
+  },
+  methods:{
+    async detailModal(){
+    this.showDetails = !this.showDetails;
+    await axios.get(`http://localhost:8000/reservation`
+    ).then((response)=>{
+      console.log(response.data)
+      this.reservations = response.data;
+    })
+ 
+
+  }
   }
 }
 </script>
