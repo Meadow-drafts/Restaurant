@@ -1,28 +1,7 @@
 <template>
   <div class="flex items-center w-screen min-h-screen" style="font-family: 'Muli', sans-serif">
     <div class="container ml-auto mr-auto flex justify-center flex-wrap items-start">
-      <div class="py-5">
-        <div class="h-full overflow-y-auto text-gray-800">
-          <div class="flex flex-wrap h-full">
-            <div class="top-0 grow-0 shrink-1 md:shrink-0 lg:items-left relative basis-auto w-50 mb-12 md:mb-0">
-              <img
-                  src="https://images.unsplash.com/photo-1513267048331-5611cad62e41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGNvZmZlZSUyMHNob3B8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
-                  class="w-full rounded-lg shadow-md"
-                  alt="Sample image"/>
-            </div>
-            <!--        about us section-->
-            <div class="xl:ml-20 p-5 ml-24 mt-10 text-white xs:w-2/3 w-1/3 mb-12 absolute bg-black opacity-75 rounded-lg">
-              <h2>Our Story</h2>
-              <p>
-                On her way she met a copy. The copy warned the Little Blind
-                Text, that where it came from it would have been rewritten a
-                thousand times and everything that was left from its origin
-                would be the word "and" and the Little Blind .
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      
       <!--      our services-->
       <div class="py-5">
         <main class="h-full overflow-y-auto">
@@ -301,8 +280,9 @@
               </div>
               <div class="flex items-center">
                 <div class="text-lg text-yellow-700 font-bold">
-                  {{data.price}} XAF                </div>
-                <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                  {{data.price}} XAF                
+                </div>
+                <button href="javascript:void(0);" @click="chooseMeal(data.id,data.restaurant_id,data.price)" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
                     <line x1="12" y1="5" x2="12" y2="19"></line>
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -470,6 +450,13 @@ export default {
   data() {
     return {
       menus:[],
+      restaurant_id:'',
+      meal_id:'',
+      table_number:'',
+      tourist_id:'',
+      amount:'',
+      date:'',
+      status:''
     }
   },
   async mounted() {
@@ -479,7 +466,26 @@ export default {
       this.menus = response.data;
 
     })
+  },
+  methods: {
+    async chooseMeal(id,rest_id,price) {
+      await axios.post("http://localhost:8000/reservation-create",
+      {
+          restaurant_id:rest_id,
+          meal_id:id,
+          table_number:5,
+          tourist_id:1,
+          amount:price,
+          date:"13/02/2023",
+          status:'Confirmed'
+      }).then((response)=>{
+        console.log("this",response.data)
+    })
+
+      // this.emitter.emit('choose-meal', id, rest_id);
+
   }
+}
 };
 </script>
 
