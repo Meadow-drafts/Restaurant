@@ -155,12 +155,12 @@
                 <p
                     class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
                 >
-                  My Blog Posts
+                  Users
                 </p>
                 <p
                     class="text-lg font-semibold text-gray-200"
                 >
-                  10
+                  0
                 </p>
               </div>
             </div>
@@ -183,12 +183,12 @@
                 <p
                     class="mb-2 text-sm font-medium text-gray-600"
                 >
-                  My Forum Posts
+                  Sales
                 </p>
                 <p
                     class="text-lg font-semibold text-gray-200 "
                 >
-                  24
+                  0
                 </p>
               </div>
             </div>
@@ -211,12 +211,12 @@
                 <p
                     class="mb-2 text-sm font-medium text-gray-600"
                 >
-                  My Tutorials
+                  Rating
                 </p>
                 <p
                     class="text-lg font-semibold text-gray-200"
                 >
-                  376
+                  0
                 </p>
               </div>
             </div>
@@ -237,12 +237,12 @@
                 <p
                     class="mb-2 text-sm font-medium text-gray-600"
                 >
-                  My Purchases
+                  Purchases
                 </p>
                 <p
                     class="text-lg font-semibold text-gray-200"
                 >
-                  35
+                  0
                 </p>
               </div>
             </div>
@@ -331,7 +331,7 @@
       </div>
     </div>
     <div class="px-4 py-6 bg-black md:flex md:items-center md:justify-between">
-        <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights Reserved.
+        <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Expresson Yourself™</a>. All Rights Reserved.
         </span>
       <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
         <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">

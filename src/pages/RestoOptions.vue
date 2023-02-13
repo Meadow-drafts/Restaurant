@@ -1,11 +1,11 @@
 <template>
   <div class="grid h-screen place-items-center">
     <div class="rounded-lg border-2 border-gray-200 bg-gray-300 p-10 mb-4 shadow-2xl hover:bg-gray-200">
-      <h3 class="mb-10 text-lg font-medium text-yellow-900">
+      <h3 class="mb-10 text-3xl font-medium text-yellow-900">
         Which Restaurant will you like to visit today?
       </h3>
-      <ul v-for="data in restaurants" :key="data" class="grid w-full gap-6 md:grid-cols-2">
-        <button @click="RestoChoice(data.email)">
+      <ul v-for="(data,index) in restaurants" :key="data" class="flex w-full flex-col m-5">
+        <button @click="RestoChoice(data.email, index)">
           <li>
             <input
                 type="radio"
@@ -21,7 +21,7 @@
             >
               <div class="block">
                 <div class="w-full text-lg font-semibold">{{data.name}}</div>
-                <div class="w-full">All flavors of coffee</div>
+                <div class="w-full">See full display of Restaurant</div>
               </div>
               <svg
                   aria-hidden="true"
@@ -73,7 +73,7 @@ export default {
     changeHosting(hosting){
       this.hosting = hosting
     },
-    RestoChoice(email){
+    RestoChoice(email,index){
     this.route = email.split("@")[0]
     console.log(this.route)    
     this.$router.push({path: this.route})
