@@ -53,7 +53,7 @@
                 @click="clickLogin"
                     type="submit"
                     style="background-color: #307feb"
-                    class="text-white mt-10 font-medium rounded-lg text-sm xs:w-full w-auto  px-5 py-2.5 text-center"
+                    class="text-white grid place-items-center mt-10 font-medium rounded-lg text-sm xs:w-full w-auto  px-5 py-2.5 text-center"
                 >
                  <span v-if="!isLoading" >Submit</span> 
                   <looping-rhombuses-spinner
@@ -61,7 +61,6 @@
                     :animation-duration="2500"
                     :rhombus-size="15"
                     color="#f3f4f6"
-                    style="margin-left: "
                   />
                 </button>
                 
@@ -93,7 +92,7 @@ export default {
   name: "Login",
   data() {
     return {
-      isLoading:true,
+      isLoading:false,
       params:{
             username: "",
             password:""
@@ -106,6 +105,7 @@ export default {
   methods:{
     async clickLogin(){
       console.log('why')
+      this.isLoading = true ;
       if(this.params.username && this.params.password){
          await axios.post('http://localhost:8000/users/login',{
           username:this.params.username,
@@ -114,16 +114,20 @@ export default {
          ).then((response)=>{
             console.log(response.data.errcode)
             if(response.data.errcode === 200){
+              this.isLoading = false;
               localStorage.setItem('token',response.data.token)
               this.$router.push('/options')              
             }else{
-              alert("Authentication Failed!")
+              alert("Authentication Failed!");
+              this.isLoading = false;
             }
          }).catch((error)=>{
           alert(error)
+          this.isLoading = false;
          })   
         }else{
           alert('Enter correct data')
+          this.isLoading = false;
 
         }
     }
