@@ -12,8 +12,8 @@
           </div>  
           <!--        Form-->
           <div class="xl:ml-20 xl:w-5/12 w-8/12 mb-12 md:mb-0">
-              <div class="rounded border-2 p-7 m-10">              
-                <p class="text-center p-5 font-bold text-4xl ">Register</p>
+              <div class="rounded border-2 p-10 m-10">              
+                <p class="text-center p-5 font-bold text-4xl text-blue-500" style="font-family: cursive;">Register</p>
                 <hr class="boeder-b-2 border-gray-200 shadow-md mb-12">
                   <div class="relative z-0 w-full mb-6 group">
                     <input
@@ -88,7 +88,7 @@
                   @click="clickSigin"
                       type="submit"
                       style="background-color: #307feb"
-                      class="grid place-items-center text-white xs:w-full w-auto mt-10 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                      class="grid place-items-center text-white xs:w-full w-auto mt-20 font-medium rounded-lg text-sm px-5 py-4 text-center"
                   >
                     <span v-if="!isLoading" >Submit</span>  
                     <looping-rhombuses-spinner
@@ -98,18 +98,17 @@
                     color="#fff"
                   />
                 </button >
-                </div>
-              <div class="text-center">
+                <div class="text-center mt-10">
                 <p class="text-sm font-semibold mt-2 pt-1 mb-0">
                     Already have an account?
                     <router-link to="/">
-                        <p
-                        href="#!"
-                        class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+                        <p class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
                         >LogIn</p>
-                        </router-link>
+                    </router-link>
                 </p>
-               </div>                  
+               </div> 
+                </div>
+                               
           </div>
         </div>
       </div>
@@ -140,7 +139,7 @@
     methods:{
        async clickSigin(){
         this.isLoading = true;
-        if(this.params){
+        if(this.params.username && this.params.email && this.params.password){
          await axios.post('http://localhost:8000/users/register',{
             username:this.params.username,
             email:this.params.email,
@@ -152,13 +151,16 @@
              // this.$router.push('/options')    
              this.isLoading = false;          
             }else{
-              alert("Authentication Failed!")
+              alert("Authentication Failed!");
+              this.isLoading = false;          
             }
          }).catch((error)=>{
-          alert(error)
+          alert(error);
+          this.isLoading = false;          
          })   
         }else{
-          alert('Enter correct data')
+          alert('Please fill the form');
+          this.isLoading = false;          
 
         }
     }  

@@ -16,9 +16,9 @@
 
         <!--        others-->
         <div class="xl:ml-20 xl:w-5/12 w-8/12 mb-12 md:mb-0 rounded border-2 p-7 m-10">
-          <p class="text-center p-5 font-bold text-4xl ">LogIn</p>
+          <p class="text-center p-5 font-bold text-4xl text-blue-500" style="font-family: cursive;">LogIn</p>
               <hr class="border-b border-gray-200 shadow-md mb-12">
-            <div class="">              
+            <div class="p-10">              
               
                 <div class="relative z-0 w-full mb-6 group">
                   <input
@@ -67,7 +67,7 @@
                 @click="clickLogin"
                     type="submit"
                     style="background-color: #307feb"
-                    class="text-white grid place-items-center mt-10 font-medium rounded-lg text-sm xs:w-full w-auto  px-5 py-2.5 text-center"
+                    class="text-white grid place-items-center mt-20 font-medium rounded-lg text-sm xs:w-full w-auto  px-5 py-4 text-center"
                 >
                  <span v-if="!isLoading" >Submit</span> 
                   <looping-rhombuses-spinner
@@ -84,7 +84,7 @@
                 Don't have an account?
                 <router-link to="/signin">          
                   <p
-                    class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out">
+                    class="text-red-600 transition duration-200 ease-in-out">
                     Register
                   </p>                   
             </router-link>
@@ -120,7 +120,7 @@ export default {
     async clickLogin(){
       console.log('why')
       this.isLoading = true ;
-      if(this.params.username && this.params.password){
+      if(this.params.username !=='' && this.params.password !==''){
          await axios.post('http://localhost:8000/users/login',{
           username:this.params.username,
           password:this.params.password
@@ -140,7 +140,7 @@ export default {
           this.isLoading = false;
          })   
         }else{
-          alert('Enter correct data')
+          alert('PLease fill the form')
           this.isLoading = false;
 
         }

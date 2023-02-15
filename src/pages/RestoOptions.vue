@@ -4,8 +4,17 @@
       <h3 class="mb-10 text-3xl font-medium text-yellow-900">
         Which Restaurant will you like to visit today?
       </h3>
-      <ul v-for="(data,index) in restaurants" :key="data" class="flex w-full flex-col m-5">
-        <button @click="RestoChoice(data.email, index)">
+      <div class="grid place-items-center">
+        <looping-rhombuses-spinner
+        v-if="isLoading"
+        :animation-duration="2500"
+        :rhombus-size="15"
+        color="#518de0"
+      />
+      </div>
+     
+      <ul v-for="(data,index) in restaurants" :key="data" class="flex w-full flex-col m-5" >       
+        <button button @click="RestoChoice(data.email, index)">
           <li>
             <input
                 type="radio"
@@ -45,20 +54,28 @@
 </template>
 <script>
 import axios from 'axios';
+import { LoopingRhombusesSpinner } from 'epic-spinners'
 export default {
   name: "RestoOptions",
   data(){
     return {
+      isLoading:true,
       hosting: "hosting-small",
       Resto_name:'',
       restaurants:[],
       route:"",
     }
   },
+  components:{
+    LoopingRhombusesSpinner,
+  }
+  ,
   async mounted(){
+    this.isLoading = true;
     await axios.get("http://localhost:8000/restaurant"
     ).then((response) => {
     console.log(response.data);
+    this.isLoading = false;
     this.restaurants = response.data
     for(let i=0; i<this.restaurants.length; i++){
       console.log(this.restaurants[i].email.split("@"))
@@ -74,9 +91,11 @@ export default {
       this.hosting = hosting
     },
     RestoChoice(email,index){
+      this.isLoading = true;
     this.route = email.split("@")[0]
     console.log(this.route)    
     this.$router.push({path: this.route})
+    this.isLoading = false;
 
   },
   },
