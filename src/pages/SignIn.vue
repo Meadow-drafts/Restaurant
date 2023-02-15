@@ -68,7 +68,7 @@
                   @click="clickSigin"
                       type="submit"
                       style="background-color: #307feb"
-                      class="text-white mt-10 bg-yellow-700 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                      class="text-white mt-10 bg-yellow-700 hover:bg-yellow-500 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
                   >
                     Submit</button >
                 </div>
