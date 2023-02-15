@@ -1,6 +1,13 @@
 <template>
+  
     <section class="h-screen">
       <div class="px-6 h-full text-gray-800">
+        <hollow-dots-spinner
+          :animation-duration="1000"
+          :dot-size="15"
+          :dots-num="3"
+          color="#ff1d5e"
+        />
         <div
             class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
           <div class="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-5 md:mb-0">
@@ -64,6 +71,7 @@
                       >
                     </div>
                   </div>
+                  
                   <button
                   @click="clickSigin"
                       type="submit"
@@ -91,12 +99,14 @@
   
   <script>
   // import Select2 from 'vue3-select2-component';
+  import { HollowDotsSpinner } from 'epic-spinners'
   import Sidebar from "../partials/Sidebar.vue";
   import axios from 'axios'
   export default {
     name: "Signin",
     data() {
       return {
+        isLoading:true,
         params:{
             username: "",
             email:"",
@@ -109,13 +119,12 @@
     },
     methods:{
        async clickSigin(){
-            if(this.params){
+        if(this.params){
          await axios.post('http://localhost:8000/users/register',{
             username:this.params.username,
             email:this.params.email,
             password:this.params.password
-         }
-         ).then((response)=>{
+         }).then((response)=>{
             console.log(response.data.errcode)
             if(response.data.errcode === 200){
               localStorage.setItem('token',response.data.token)
@@ -136,3 +145,46 @@
   };
   </script>
   
+  <style>
+.hollow-dots-spinner, .hollow-dots-spinner * {
+      box-sizing: border-box;
+    }
+
+    .hollow-dots-spinner {
+      height: 15px;
+      width: calc(30px * 3);
+    }
+
+    .hollow-dots-spinner .dot {
+      width: 15px;
+      height: 15px;
+      margin: 0 calc(15px / 2);
+      border: calc(15px / 5) solid #ff1d5e;
+      border-radius: 50%;
+      float: left;
+      transform: scale(0);
+      animation: hollow-dots-spinner-animation 1000ms ease infinite 0ms;
+    }
+
+    .hollow-dots-spinner .dot:nth-child(1) {
+      animation-delay: calc(300ms * 1);
+    }
+
+    .hollow-dots-spinner .dot:nth-child(2) {
+      animation-delay: calc(300ms * 2);
+    }
+
+    .hollow-dots-spinner .dot:nth-child(3) {
+      animation-delay: calc(300ms * 3);
+
+    }
+
+    @keyframes hollow-dots-spinner-animation {
+      50% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }</style>
