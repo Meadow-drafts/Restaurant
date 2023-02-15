@@ -53,9 +53,17 @@
                 @click="clickLogin"
                     type="submit"
                     style="background-color: #307feb"
-                    class="text-white mt-10 bg-yellow-700 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                    class="text-white mt-10 font-medium rounded-lg text-sm xs:w-full w-auto  px-5 py-2.5 text-center"
                 >
-                  Submit</button>
+                 <span v-if="!isLoading" >Submit</span> 
+                  <looping-rhombuses-spinner
+                    v-if="isLoading"
+                    :animation-duration="2500"
+                    :rhombus-size="15"
+                    color="#f3f4f6"
+                    style="margin-left: "
+                  />
+                </button>
                 
               </div>     
             <div class="text-center">
@@ -78,13 +86,14 @@
 </template>
 
 <script>
-// import Select2 from 'vue3-select2-component';
+import { LoopingRhombusesSpinner } from 'epic-spinners'
 import Sidebar from "../partials/Sidebar.vue";
 import axios from 'axios'
 export default {
   name: "Login",
   data() {
     return {
+      isLoading:true,
       params:{
             username: "",
             password:""
@@ -92,7 +101,7 @@ export default {
     };
   },
   components:{
-    // Select2
+    LoopingRhombusesSpinner,
   },
   methods:{
     async clickLogin(){
