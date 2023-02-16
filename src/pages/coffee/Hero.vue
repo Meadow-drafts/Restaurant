@@ -44,7 +44,7 @@
               hover:text-blue-400
             "
                 >
-                <img src="src/images/coffee-logo.jpg" class="h-20 w-30 rounded-xl"/>
+                <img src="src/images/coffee-logo.jpg" class="h-20 w-30 rounded-full"/>
                 </router-link>
                 <!-- Mobile menu button -->
                 <div @click="showMenu = !showMenu" class="flex md:hidden">
@@ -142,7 +142,7 @@
                     <input type="text" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 " placeholder="yyyy-mm-dd" required>
                     <input type="text" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 " placeholder="Table number" required>  
                 </div>
-                <p class="p-5">Total Price: </p>  
+                <p class="p-5">Total Price:  </p>  
                   <button class="bg-yellow-700 w-full text-white font-bold py-2 px-4 rounded">
                     Button
                   </button>
@@ -366,7 +366,7 @@
     <img :src="services" alt="" class="mt-8">
   </div>
     <!--    menu-->
-    <div id="menu" class="grid place-items-center mt-10" style="font-family: 'Muli', sans-serif;">
+    <div id="menu" class="grid place-items-center mt-10 " style="font-family: 'Muli', sans-serif;">
       <div class="container ml-auto mr-auto flex justify-center flex-wrap items-start">
         <div class="w-full pl-5 lg:pl-2 mb-4 mt-4">
           <h1 class="text-3xl text-center border-b-2 border-stone-700 lg:text-4xl text-stone-700 font-extrabold" style="font-family: cursive; color:#c49b63">
@@ -487,6 +487,7 @@ export default {
     heroImg:'./src/images/coffee-hero.avif',
     menus:[],
     reservations:[],
+    total_price : null,
 
     }
   },
@@ -511,6 +512,7 @@ export default {
     ).then((response)=>{
       console.log(response.data)
       this.reservations = response.data;
+      
     })
   },
   async chooseMeal(id,rest_id,price) {
