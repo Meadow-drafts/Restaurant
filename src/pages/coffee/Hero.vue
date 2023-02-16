@@ -18,6 +18,23 @@
             >
               <div class="flex items-center justify-between">
                 <router-link
+                    to="/options"
+                    class="
+              text-xl
+              font-bold
+              text-gray-800
+              md:text-2xl
+              hover:text-blue-400 mr-10 "
+                >
+                <div class="flex text-2xl">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                  <path d="M9.195 18.44c1.25.713 2.805-.19 2.805-1.629v-2.34l6.945 3.968c1.25.714 2.805-.188 2.805-1.628V8.688c0-1.44-1.555-2.342-2.805-1.628L12 11.03v-2.34c0-1.44-1.555-2.343-2.805-1.629l-7.108 4.062c-1.26.72-1.26 2.536 0 3.256l7.108 4.061z" />
+                </svg>
+                Back
+                </div>
+                
+                </router-link>
+                <router-link
                     to="/"
                     class="
               text-xl
@@ -26,7 +43,8 @@
               md:text-2xl
               hover:text-blue-400
             "
-                >Logo
+                >
+                <img src="src/images/coffee-logo.jpg" class="h-20 w-30 rounded-xl"/>
                 </router-link>
                 <!-- Mobile menu button -->
                 <div @click="showMenu = !showMenu" class="flex md:hidden">
@@ -134,27 +152,25 @@
         </div>      
     </transition>
         <!--hero section-->
-        <div class="container flex flex-row relative ">
-          <div class=" flex-row mt-10">
-            <h1 style="color:#c49b63" class=" text-7xl">Welcome To Expresso Yourself</h1>
+        <div class="container top-10 grid grid-cols-2  " style="font-family: cursive; color:#c49b63">
+          <div class=" flex flex-col ">
+                <img src="src/images/spilling-coffe.png" style="height: 40rem; width:40rem;"/>
                 <p
-                    class="mt-4 text-2xl text-yellow-200"
+                    class="mt-4 text-2xl"
                 >Creamy and Hot To serve</p>
           </div>
-          <div class=" flex flex-col">
-                <img src="src/images/spilling-coffe.png" style="height: 30rem; width:50rem;"/>
-                <p
-                    class="mt-4 text-2xl text-yellow-200"
-                >Creamy and Hot To serve</p>
+          <div class=" grid grid-rows-2 gap-0 mt-40">
+            <h1 class=" text-3xl">Welcome To  </h1>
+            <h1 class="text-left text-7xl -mt-20"> Expresso Yourself . . .</h1>            
           </div>
         </div>
       </div>
       <!--Restaurant Information-->
-        <div class="grid grid-cols-2 gap-2  sm:grid-cols-4 place-items-end bg-stone-900">
+        <div style="font-family: cursive; color:#c49b63" class="grid grid-cols-2 gap-2 w-1/2 p-20 sm:grid-cols-3 place-items-center bg-stone-900">
           <div>
-                <h2 class="mb-6 text-lg font-semibold text-yellow-200 uppercase">198est 21th Street</h2>
+                <h2 class="mb-6 text-lg font-semibold uppercase pt-3">198est 21th Street</h2>
                 <ul class="text-white ">
-                  <li class="mb-4 w-1/2">
+                  <li class="mb-4 ">
                     <p class="hover:underline">
                       203 Fake St. Mountain View, San Francisco, California, USA.
                     </p>
@@ -162,9 +178,9 @@
                 </ul>
           </div>
           <div>
-                <h2 class="mb-6 text-lg font-semibold text-yellow-200 uppercase">Open Monday to Friday</h2>
+                <h2 class="mb-6 text-lg font-semibold uppercase">Monday to Friday</h2>
                 <ul class="text-white ">
-                  <li class="mb-4 w-1/2">
+                  <li class="mb-4 ">
                     <p class="hover:underline">
                       676831115
                     </p>
@@ -174,10 +190,10 @@
                   </li>
                 </ul>
           </div>
-          <div class="visible">
-                <h2 class="mb-6 text-lg font-semibold text-yellow-200 uppercase">Open Monday to Friday</h2>
+          <div class="">
+                <h2 class="mb-6 text-lg font-semibold  uppercase">Monday to Friday</h2>
                 <ul class="text-white ">
-                  <li class="mb-4 w-1/2">
+                  <li class="mb-4">
                     <p class="hover:underline">
                       676831115
                     </p>
@@ -188,7 +204,7 @@
                 </ul>
           </div>
 <!--          Reservation form-->
-          <div class="rounded-t-md sm:col-span-1 col-span-2 w-full m-3 p-5 mb-6 md:mb-0" style="background-color:#c49b63;">
+          <!-- <div class="rounded-t-md sm:col-span-1 col-span-2 w-full m-3 p-5 mb-6 md:mb-0" style="background-color:#c49b63;">
 
             <form>
               <p class="text-center text-lg underline">Make Your Reservation</p>
@@ -220,13 +236,13 @@
               </div>
               <button type="submit" class="text-white bg-yellow-700 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
             </form>
-          </div>
+          </div> -->
         </div>
     </div>
     <!--    info card counter section-->
     <div class="py-5">
       <main class="h-full overflow-y-auto">
-        <p class="text-4xl text-center font-medium m-5 border-b-2 border-gray-200 shadow-b-lg">Our Stats</p>
+        <p class="text-4xl text-center text-stone-700 font-bold m-5 border-b-2 border-stone-700 shadow-b-lg" style="font-family: cursive; color:#c49b63">Our Stats</p>
         <div class="container mx-auto grid">
           <!-- Cards -->
           <div class="grid gap-6 mb-8 grid-cols-2 xl:grid-cols-4">
@@ -344,13 +360,16 @@
     </div>
     <!--    our services-->
     <div>
-    <img :src="services" alt="">
+      <h1 class="text-3xl border-b-2 border-stone-700 text-center lg:text-4xl text-stone-700 font-extrabold mt-5" style="font-family: cursive; color:#c49b63">
+            Our Services
+          </h1>
+    <img :src="services" alt="" class="mt-8">
   </div>
     <!--    menu-->
-    <div id="menu" class="flex relative items-center w-screen min-h-screen" style="font-family: 'Muli', sans-serif;">
+    <div id="menu" class="grid place-items-center mt-10" style="font-family: 'Muli', sans-serif;">
       <div class="container ml-auto mr-auto flex justify-center flex-wrap items-start">
         <div class="w-full pl-5 lg:pl-2 mb-4 mt-4">
-          <h1 class="text-3xl lg:text-4xl text-gray-700 font-extrabold">
+          <h1 class="text-3xl text-center border-b-2 border-stone-700 lg:text-4xl text-stone-700 font-extrabold" style="font-family: cursive; color:#c49b63">
             Our Menu
           </h1>
         </div>
@@ -371,7 +390,7 @@
                   <div class="text-lg font-bold text-black">
                     {{data.price}} XAF
                   </div>
-                  <button href="javascript:void(0);" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                  <button @click="chooseMeal(data.id,data.restaurant_id,data.price)"  class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
                       <line x1="12" y1="5" x2="12" y2="19"></line>
                       <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -467,6 +486,8 @@ export default {
     services:'./src/images/services.png',
     heroImg:'./src/images/coffee-hero.avif',
     menus:[],
+    reservations:[],
+
     }
   },
   computed:{
@@ -492,6 +513,23 @@ export default {
       this.reservations = response.data;
     })
   },
+  async chooseMeal(id,rest_id,price) {
+      await axios.post("http://localhost:8000/reservation-create",
+      {
+          restaurant_id:rest_id,
+          meal_id:id,
+          table_number:5,
+          tourist_id:1,
+          amount:price,
+          date:"16/02/2023",
+          status:'Confirmed'
+      }).then((response)=>{
+        console.log("this",response.data)
+    })
+
+      // this.emitter.emit('choose-meal', id, rest_id);
+
+  }
   },
 };
 </script>
