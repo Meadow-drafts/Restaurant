@@ -35,6 +35,23 @@
             >
               <div class="flex items-center justify-between">
                 <router-link
+                    to="/options"
+                    class="
+              text-xl
+              font-bold
+              text-gray-800
+              md:text-2xl
+              hover:text-blue-400 mr-10
+            "
+                >
+                <div class="flex text-2xl">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
+                  <path d="M9.195 18.44c1.25.713 2.805-.19 2.805-1.629v-2.34l6.945 3.968c1.25.714 2.805-.188 2.805-1.628V8.688c0-1.44-1.555-2.342-2.805-1.628L12 11.03v-2.34c0-1.44-1.555-2.343-2.805-1.629l-7.108 4.062c-1.26.72-1.26 2.536 0 3.256l7.108 4.061z" />
+                </svg>
+                Back
+                </div>
+                </router-link>
+                <router-link
                     to="/"
                     class="
               text-xl
@@ -252,6 +269,30 @@ video {
 .slide {
   background-image: url(" ../../images/cook.png");
 
+}
+/* .blur{
+  opacity: 0.2;
+  position:relative !important;
+}
+.check{
+  position:relative !important;
+} */
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 </style>
