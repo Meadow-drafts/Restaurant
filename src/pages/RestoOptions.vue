@@ -13,8 +13,8 @@
       />
       </div>
      
-      <ul v-for="(data,index) in restaurants" :key="data" class="flex w-full flex-col m-5" >       
-        <button button @click="RestoChoice(data.id)">
+      <ul v-for="(data,index) in restaurants" :key="data.id" class="flex w-full flex-col m-5" >       
+        <button button @click="RestoChoice(index)">
           <li>
             <input
                 type="radio"
@@ -89,16 +89,15 @@ export default {
     changeHosting(hosting){
       this.hosting = hosting
     },
-    RestoChoice(id){
+    RestoChoice(index){
       this.isLoading = true;
-      console.log(id)
-      if(id===1){
-        this.$router.push({path: "/expresso"})
-      }else if(id === 3){
-        this.route = "dine"
+      console.log(index)
+      if(index===0){
+        this.$router.push({path: '/expresso'})
+      }else if(index === 1) {
+        this.$router.push({path: '/dine'})
       }     
-    this.$router.push({path: "/dine"})
-    this.isLoading = false;
+      this.isLoading = false;
 
   },
   },
