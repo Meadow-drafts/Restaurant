@@ -1,6 +1,6 @@
 <template>
-<div>
-    <div class="text-right my-10 text-green-600 mx-10 font-bold text-2xl">Fast Food . . .</div>
+<div class="">
+    <div class="text-right my-10 text-red-600 mx-10 font-bold text-3xl">Fast Food . . .</div>
 
 
 <!-- Cards -->
@@ -39,10 +39,20 @@ export default{
         await axios.get('http://localhost:8000/meal/showby/1'
         ).then((response)=>{
             console.log(response.data)
-            this.restaurant_meals = response.data
+            this.restaurant_meals = response.data.slice(0,3)
         })
 
     },
 }
 
 </script>
+
+<style>
+
+/* .element{
+  background-image: url("../../images/blob2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+} */
+</style>

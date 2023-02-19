@@ -496,14 +496,14 @@ export default {
       return this.showDetails;
     }
   },
-  async mounted(){
-    await axios.get("http://localhost:8000/resto-meal-show/1"
-    ).then((response)=>{
-      console.log(response.data)
-      this.menus = response.data
-      console.log(this.menus[0].img_url)
-    })
-  },
+  // async mounted(){
+  //   await axios.get("http://localhost:8000/resto-meal-show/1"
+  //   ).then((response)=>{
+  //     console.log(response.data)
+  //     this.menus = response.data
+  //     console.log(this.menus[0].img_url)
+  //   })
+  // },
   methods:{
     async detailModal(){
       console.log("why tf")

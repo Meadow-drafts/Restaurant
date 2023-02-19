@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div class="text-right my-10 text-green-600 mx-10 font-bold text-2xl">Fast Food . . .</div>
+        <div class="text-right my-10 text-yellow-700 mx-10 font-bold text-3xl">Yummy Right ?! . . .</div>
     
     
     <!-- Cards -->
-    <div  class="grid grid-cols-3">
+    <div  class="grid grid-cols-3 element">
       <div v-for="data in restaurant_meals" :key="data" class="w-5/6 mx-auto mb-12 rounded-lg shadow-lg  bg-white p-5">
       <img :src="data.img_url" alt=""  class="rounded-full w-28 h-28 my-5 mx-auto">
       <div class="grid grid-cols-2 p-2">
@@ -40,14 +40,19 @@
             await axios.get('http://localhost:8000/meal/showby/2'
             ).then((response)=>{
                 console.log(response.data)
-                this.restaurant_meals = response.data
-                for(let i=3;i>=this.restaurant_meals.length;i++){
-                    this.meals = this.restaurant_meals[i]
-                    console.log('here',this.meals)
-                                }
+                console.log(response.data.slice(0,3))
+                this.restaurant_meals = response.data.slice(0,3)
+                
             })
         
         },
     }
     
     </script>
+    <style>
+.element{
+  background-image: url("../../images/blob.svg");
+  background-position: 0lvh;
+
+}
+</style>

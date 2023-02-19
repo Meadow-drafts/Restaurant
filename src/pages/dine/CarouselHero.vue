@@ -19,7 +19,7 @@
             </svg>
         </div>
 </div>
-      <p class="absolute font-bold title text-7xl text-black text-center" style="font-family: cursive;">{{text}}</p>
+      <p class="absolute font-bold title text-7xl text-black text-center" style="font-family: cursive;">Yummy! Init?!</p>
 <!--      header-->
       <header class="w-full text-3xl bg-transparent border-b-2 shadow-lg border-gray-200">
         <div>

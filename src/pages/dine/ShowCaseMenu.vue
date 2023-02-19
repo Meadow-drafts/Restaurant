@@ -282,12 +282,14 @@
                 <div class="text-lg text-yellow-700 font-bold">
                   {{data.price}} XAF                
                 </div>
-                <button  @click="chooseMeal(data.id,data.restaurant_id,data.price)" class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                <div v-if="data.status === 'Available'">
+                  <button   @click="chooseMeal(data.id,data.restaurant_id,data.price)" class="ml-5 rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex transition duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
                     <line x1="12" y1="5" x2="12" y2="19"></line>
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                   </svg>
                 </button>
+                </div>               
               </div>
 
             </div>
@@ -460,11 +462,15 @@ export default {
     }
   },
   async mounted() {
-    await axios.get("http://localhost:8000/resto-meal-show/3"
+    await axios.get("http://localhost:8000/meal/showby/2"
     ).then((response)=>{
       console.log(response.data);
-      this.menus = response.data;
-
+      let datas = response.data;
+      // filter meals whose status is = available
+      this.menus = datas.filter(data =>
+        data.status === "Available"
+      )
+      console.log("filtered", this.menus)
     })
   },
   methods: {
