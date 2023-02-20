@@ -211,7 +211,6 @@
   </section>
     
     <!-- Cards -->
-    How it works
     <div class="feature grid grid-cols-3 lg:ml-96 lg:-mt-18">
       <div class="lg:w-3/6 w-5/6 mb-12 -mr-20 -mt-20 rounded-lg transform hover:translate-y-2 hover:shadow-xl transition duration-300 lg:-mt-32 bg-white p-5">
       <img src="../images/restaurants.jpg" alt=""  class="h-24 rounded-full w-28 my-5 mx-auto">
