@@ -317,17 +317,17 @@
                         </div>
                       </div>
                       <p class="text-gray-500 font-bold">Reservation fee: 2500 XAF </p>
-                      <div class="flex items-center justify-between">   
-                        <!-- <p class="text-gray-500 font-bold">Amount:  </p>
-                        <div class="relative z-0">
-                          <input v-model="reserve.amount" type="text" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
-                          <label for="floating_standard" class="absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Amount</label>
-                      </div>               -->
-                      </div>
-                      
+                                         
                       <button @click="confirmReserve" class="bg-red-600 w-full text-white font-bold py-2 px-4 rounded">
                           Confirm
                         </button>
+                        <looping-rhombuses-spinner
+                        v-if="isLoading"
+                        :animation-duration="2500"
+                        :rhombus-size="15"
+                        color="#aa8b9c"
+                        style="margin-left:6rem"
+                              />
                     </div>
                   </div>                 
                 </div>
@@ -451,9 +451,14 @@
 </template>
 
 <script>
+import { LoopingRhombusesSpinner } from 'epic-spinners'
+
 import axios from 'axios';
 export default {
   name:'Hero',
+  components:{
+    LoopingRhombusesSpinner
+  },
   data(){
     return{
     showMenu:false,
