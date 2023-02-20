@@ -1,6 +1,7 @@
 <template>
   <div class="flex items-center w-screen min-h-screen" style="font-family: 'Muli', sans-serif">
-    <div class="container ml-auto mr-auto flex justify-center flex-wrap items-start">      
+    <div class="container ml-auto mr-auto flex justify-center flex-wrap items-start">
+      
       <!--      our services-->
       <div class="py-5">
         <main class="h-full overflow-y-auto">
@@ -253,12 +254,12 @@
           </div>
         </main>
       </div>
+      
       <!--menu section-->
-      <div class="w-full pl-5 lg:pl-2 mb-4 mt-4">
-          <h1 class="text-3xl text-center border-b-2 border-white lg:text-4xl text-red-600 font-extrabold" style="font-family: cursive;">
-            Our Menu
-          </h1>
-        </div>
+      <div class=" w-full pl-5 lg:pl-2 mb-4 mt-4">
+        <p class="text-4xl text-center font-medium m-5 border-b-2 border-gray-200 shadow-b-lg">Our Menu</p>
+
+      </div>
       <div class="menu grid gap-6 mb-8 grid-cols-2 xl:grid-cols-4">
         <div v-for="data in menus" :key="data" class="mr-10">
           <div
@@ -282,12 +283,14 @@
                 <div class="text-lg text-yellow-700 font-bold">
                   {{data.price}} XAF                
                 </div>
+                <div v-if="data.status === 'Available'">
                   <button   @click="detailModal(data.id,data.restaurant_id,data.price)" class="ml-5 rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex transition duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
                     <line x1="12" y1="5" x2="12" y2="19"></line>
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                   </svg>
                 </button>
+                </div>               
               </div>
 
             </div>
@@ -296,7 +299,6 @@
         </div>
     </div>
   </div>
-  
   <div v-if="isShowDetails">
       <p class="text-4xl text-center text-red-600 font-bold m-5 border-b-2 border-white shadow-b-lg" style="font-family: cursive;">Make a Reservation</p>
       <div class="grid grid-cols-2  lg:w-1/2 w-full lg:ml-96  -mr-32 p-10">
@@ -352,6 +354,7 @@
 
       </div>    
     </div>
+   
   <footer class="bg-black h-1/6">
     <div class="grid grid-cols-3 gap-8 px-6 py-2 md:grid-cols-3">
       <div>
@@ -508,7 +511,7 @@ export default {
       menus:[],
       reservations:[],
     total_price : null,
-      showDetails:true,
+      showDetails:false,
       reserve:{
       name:'',
       restaurant_id:'',
@@ -544,7 +547,7 @@ export default {
   methods: {
      // load meal by id to the reservation form when modal opens after clicking on meal buttton
     //meal id for api is gotten when clicked on meall button
-  async detailModal(id,restaurant_id, price){
+    async detailModal(id,restaurant_id, price){
       console.log("why tf")
       this.user_id = localStorage.getItem("user_id")
       console.log(this.user_id)
@@ -559,7 +562,8 @@ export default {
       this.reserve.meal_id = id
       
     })
-  },  
+  },
+  
   async confirmReserve(){
     console.log("reserve")
     this.reserve.user_id = localStorage.getItem("user_id")
@@ -617,15 +621,14 @@ export default {
         })
       }
     }
-  },    
+  },
+
+    
 }
 };
 </script>
 
 <style>
-.order-card{
-  background-image:url('../images/cook.png');
-}
 .menu-img {
   border-radius: 50%;
 }
@@ -634,16 +637,5 @@ export default {
 }
 .menu {
   position: relative;
-}
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.25);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 </style>
