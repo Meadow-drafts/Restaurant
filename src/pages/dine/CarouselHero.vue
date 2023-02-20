@@ -35,12 +35,12 @@
             >
               <div class="flex items-center justify-between">
                 <router-link
-                    to="/options"
+                    to="/"
                     class="
               text-xl
               font-bold
-              text-gray-800
-              md:text-2xl
+              text-black
+               md:text-2xl
               hover:text-blue-400 mr-10
             "
                 >

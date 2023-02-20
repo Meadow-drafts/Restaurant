@@ -1,23 +1,23 @@
 <template>
     <div>
-        <div class="text-right my-10 text-yellow-700 mx-10 font-bold text-3xl">Yummy Right ?! . . .</div>
+        <div class="text-right my-10 text-yellow-700 mx-8 font-bold text-3xl">
+          <button @click="viewResto" class=" text-3xl ">
+            Yummy! Init ?!..  
+            <p>see more</p>
+          </button>  
+        </div>
     
     
     <!-- Cards -->
     <div  class="grid grid-cols-3 element">
-      <div v-for="data in restaurant_meals" :key="data" class="w-5/6 mx-auto mb-12 rounded-lg shadow-lg  bg-white p-5">
-      <img :src="data.img_url" alt=""  class="rounded-full w-28 h-28 my-5 mx-auto">
-      <div class="grid grid-cols-2 p-2">
-        <h4 class="font-bold text-2xl text-left">{{data.name}}</h4>
-        <h4 class="font-bold text-2xl text-center">{{data.price}} XAF</h4>
+      <div v-for="data in restaurant_meals" :key="data" class="w-1/2 mx-auto mb-12 rounded-lg transform hover:translate-y-2 hover:shadow-xl transition duration-300 bg-white p-5">
+      <img :src="data.img_url" alt=""  class="rounded-lg w-52 h-32 my-5 mx-auto">
+      <div class="grid grid-cols-2 p-5">
+        <h4 class="font-bold text-xl text-yellow-700 text-left">{{data.name}}</h4>
+        <h4 class="font-bold text-lg mt-1 text-black text-center">{{data.price}} XAF</h4>
       </div>
-      <p class="mt-3">{{ data.description }}</p>
-      <button class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
-                      <line x1="12" y1="5" x2="12" y2="19"></line>
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                    </svg>
-      </button>
+      <p class="mt-3 text-center">{{ data.description }}</p>
+      
     </div>
     
     
@@ -46,6 +46,11 @@
             })
         
         },
+        methods:{
+          async viewResto(){
+            await axios.get('http://localhost:8000/meal/showby/2')
+          }
+        }
     }
     
     </script>

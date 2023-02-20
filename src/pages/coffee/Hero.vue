@@ -1,10 +1,19 @@
 <template>
   <div class="main">
-    <div class="w-full h-full bg-center hero mb-0 bg-cover">
-      <span id="blackOverlay" class="w-full h-full absolute opacity-0 bg-black"></span>
-      <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 75vh;">
+    <div class="w-full h-full  mb-0"
+    style="background-image: url('../../images/fast-food.jpg')!important;
+    background-repeat: no-repeat;
+    background-size: cover;"
+    
+    >
+      <span id="blackOverlay" class="w-full h-full absolute opacity-0 bg-white"></span>
+      <div class="relative  pt-16 pb-32 flex content-center items-center justify-center" 
+      style="min-height: 90vh;background-image: url(https://template79170.motopreview.com/mt-demo/79100/79170/mt-content/uploads/2019/03/mt-1781-home-header-bg.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;"
+     >
         <!--header-->
-        <header class="w-full text-3xl bg-transparent border-b-2 shadow-lg border-gray-200">
+        <header class="w-full text-3xl bg-transparent shadow-lg">
         <div>
           <div class="bg-transparent text-3xl">
             <nav
@@ -18,11 +27,11 @@
             >
               <div class="flex items-center justify-between">
                 <router-link
-                    to="/options"
+                    to="/"
                     class="
               text-xl
               font-bold
-              text-gray-800
+              text-white
               md:text-2xl
               hover:text-blue-400 mr-10 "
                 >
@@ -44,7 +53,7 @@
               hover:text-blue-400
             "
                 >
-                <img src="src/images/coffee-logo.jpg" class="h-20 w-30 rounded-full"/>
+                <img src="https://template79170.motopreview.com/mt-demo/79100/79170/mt-content/uploads/2019/03/mt-1781-home-logo.png" class="h-20 w-30 rounded-full"/>
                 </router-link>
                 <!-- Mobile menu button -->
                 <div @click="showMenu = !showMenu" class="flex md:hidden">
@@ -154,19 +163,16 @@
         <!--hero section-->
         <div class="container top-10 grid grid-cols-2  " style="font-family: cursive; color:#c49b63">
           <div class=" flex flex-col ">
-                <img src="src/images/spilling-coffe.png" style="height: 40rem; width:40rem;"/>
-                <p
-                    class="mt-4 text-2xl"
-                >Creamy and Hot To serve</p>
-          </div>
-          <div class=" grid grid-rows-2 gap-0 mt-40">
-            <h1 class=" text-3xl">Welcome To  </h1>
-            <h1 class="text-left text-7xl -mt-20"> Expresso Yourself . . .</h1>            
-          </div>
+            <p class="-mt-10 text-7xl text-white">
+              Express Fast food to raise your mood!
+                Mexican Burger</p>
+            <button type="button" class="px-5 py-3 mt-10 text-lg font-semibold bg-red-600 text-white rounded w-1/2">Make a Reservation</button>
+
+          </div>          
         </div>
       </div>
       <!--Restaurant Information-->
-        <div style="font-family: cursive; color:#c49b63" class="grid grid-cols-2 gap-2 w-1/2 p-20 sm:grid-cols-3 place-items-center bg-stone-900">
+        <div style="font-family: cursive;" class="text-gray-400 rounded-b-lg grid grid-cols-2 gap-2 w-1/2 p-20 sm:grid-cols-3 place-items-center bg-black">
           <div>
                 <h2 class="mb-6 text-lg font-semibold uppercase pt-3">198est 21th Street</h2>
                 <ul class="text-white ">
@@ -239,10 +245,10 @@
           </div> -->
         </div>
     </div>
-    <!--    info card counter section-->
-    <div class="py-5">
+      <!--    info card counter section-->
+      <div class="py-5 ">
       <main class="h-full overflow-y-auto">
-        <p class="text-4xl text-center text-stone-700 font-bold m-5 border-b-2 border-stone-700 shadow-b-lg" style="font-family: cursive; color:#c49b63">Our Stats</p>
+        <p class="text-4xl text-center text-red-600 font-bold m-5 border-b-2 border-white shadow-b-lg" style="font-family: cursive;">Our Stats</p>
         <div class="container mx-auto grid">
           <!-- Cards -->
           <div class="grid gap-6 mb-8 grid-cols-2 xl:grid-cols-4">
@@ -261,7 +267,7 @@
               </div>
               <div>
                 <p
-                    class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400"
+                    class="mb-2 text-xl font-medium text-gray-400"
                 >
                   Users
                 </p>
@@ -289,7 +295,7 @@
               </div>
               <div>
                 <p
-                    class="mb-2 text-sm font-medium text-gray-600"
+                    class="mb-2 text-xl font-medium text-gray-400"
                 >
                   Sales
                 </p>
@@ -317,7 +323,7 @@
               </div>
               <div>
                 <p
-                    class="mb-2 text-sm font-medium text-gray-600"
+                    class="mb-2 text-xl font-medium text-gray-400"
                 >
                   Rating
                 </p>
@@ -343,7 +349,7 @@
               </div>
               <div>
                 <p
-                    class="mb-2 text-sm font-medium text-gray-600"
+                    class="mb-2 text-xl font-medium text-gray-400"
                 >
                   Purchases
                 </p>
@@ -358,18 +364,11 @@
         </div>
       </main>
     </div>
-    <!--    our services-->
-    <div>
-      <h1 class="text-3xl border-b-2 border-stone-700 text-center lg:text-4xl text-stone-700 font-extrabold mt-5" style="font-family: cursive; color:#c49b63">
-            Our Services
-          </h1>
-    <img :src="services" alt="" class="mt-8">
-  </div>
-    <!--    menu-->
+      <!--    menu-->
     <div id="menu" class="grid place-items-center mt-10 " style="font-family: 'Muli', sans-serif;">
       <div class="container ml-auto mr-auto flex justify-center flex-wrap items-start">
         <div class="w-full pl-5 lg:pl-2 mb-4 mt-4">
-          <h1 class="text-3xl text-center border-b-2 border-stone-700 lg:text-4xl text-stone-700 font-extrabold" style="font-family: cursive; color:#c49b63">
+          <h1 class="text-3xl text-center border-b-2 border-white lg:text-4xl text-red-600 font-extrabold" style="font-family: cursive;">
             Our Menu
           </h1>
         </div>
@@ -380,9 +379,9 @@
                 <img :src="data.img_url" alt=""
                      class="xl:h-64 rounded-t-lg w-64" />
               </figure>
-              <div style="background-color: #c49b63; color: black" class="rounded-b-lg p-4 flex flex-col">
+              <div style="color: black" class="rounded-b-lg p-4 bg-red-600 flex flex-col">
                 <div>
-                  <h5 class="text-white text-2xl font-light leading-none">
+                  <h5 class="text-gray-300 text-2xl font-light leading-none">
                     {{data.name}}
                   </h5>
                 </div>
@@ -403,6 +402,10 @@
           </div>
       </div>
     </div>
+    
+  
+    
+    
  </div>
 <footer class="bg-black pt-5 h-1/6">
     <div class="grid grid-cols-3 gap-8 px-6 py-2 md:grid-cols-3">
@@ -491,6 +494,18 @@ export default {
 
     }
   },
+  async mounted() {
+    await axios.get("http://localhost:8000/meal/showby/1"
+    ).then((response)=>{
+      console.log(response.data);
+      let datas = response.data;
+      // filter meals whose status is = available
+      this.menus = datas.filter(data =>
+        data.status === "Available"
+      )
+      console.log("filtered", this.menus)
+    })
+  },
   computed:{
     isShowDetails(){
       return this.showDetails;
@@ -537,17 +552,17 @@ export default {
 </script>
 
 <style>
-.main{
-  background-image:url("../../images/background-img.webp");
+/* .main{
+  background-image:url("https://images.unsplash.com/photo-1525947088131-b701cd0f6dc3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60") !important;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-}
-.hero{
-  background-color:#000000;
+} */
+/* .hero{
+  background-color:rgb(44, 5, 5);
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 header{
   position: fixed !important;
 }

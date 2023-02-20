@@ -4,6 +4,7 @@ import Signin from "./pages/SignIn.vue";
 import Hero from "./pages/coffee/Hero.vue"
 import dineIndex from "./pages/dine/dineIndex.vue";
 import RestoOptions from "./pages/RestoOptions.vue";
+// import firstOption from "./pages/components/firstOption.vue"
 
 const routerHistory = createWebHistory()
 
@@ -12,15 +13,15 @@ const router = createRouter({
   routes: [
       {
       path: '/',
-      component: Login
+      component: RestoOptions
     },
       {
       path: '/signin',
       component: Signin
     },
      {
-      path: '/options',
-      component: RestoOptions
+      path: '/login',
+      component: Login
     },
     {
       path: '/expresso',
