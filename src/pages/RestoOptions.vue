@@ -1,6 +1,6 @@
 <template>
 <!--      header-->
-  <header class="w-2/3 my-5 lg:ml-80 text-3xl bg-gray-300 shadow-md border-b-2 shadow-lg border-gray-200">
+  <header class="z-10 w-2/3 my-5 lg:ml-80 text-3xl bg-gray-300 shadow-md border-b-2 shadow-lg border-gray-200">
     <div>
       <div class="bg-transparent text-3xl">
         <nav
@@ -103,6 +103,17 @@
       </div>
     </div>
   </header>
+
+
+
+
+
+
+
+
+
+
+
   <section>
 		<div>
       <svg
@@ -208,7 +219,7 @@
       <p class="mt-3 p-4">We bring you different varities of restaurants</p>
 
       </div>    
-      <div class="lg:w-3/6 w-5/6 mb-12 -mt-20 rounded-lg transform hover:translate-y-2 hover:shadow-xl transition duration-300lg:-mt-32 bg-white p-5">
+      <div class="lg:w-3/6 w-5/6 mb-12 -mt-20 rounded-lg transform hover:translate-y-2 hover:shadow-xl transition duration-300 lg:-mt-32 bg-white p-5">
         <img src="../images/reservation.jpg" alt="" class="h-36 rounded-full w-28 my-5 mx-auto">
         <h4 class="font-bold text-2xl text-center">Available Reservations</h4>
         <p class="mt-3">Choice to Dine In</p>

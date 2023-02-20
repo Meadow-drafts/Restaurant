@@ -64,6 +64,10 @@ export default {
   components:{
     LoopingRhombusesSpinner,
   },
+    mounted() {
+      localStorage.clear("token","user_id");
+
+    },
   methods:{
     async clickLogin(){
       console.log('why')
@@ -78,6 +82,7 @@ export default {
             if(response.data.errcode === 200){
               this.isLoading = false;
               localStorage.setItem('token',response.data.token)
+              localStorage.setItem('user_id',response.data.user_id)
               this.$router.push('/')              
             }else{
               alert("Authentication Failed!");
@@ -101,5 +106,7 @@ export default {
 .element-container {
 
   background-image: url('../images/login-bgnd.PNG');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>

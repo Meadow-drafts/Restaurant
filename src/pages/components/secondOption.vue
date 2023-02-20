@@ -10,7 +10,7 @@
     
     <!-- Cards -->
     <div  class="grid grid-cols-3 element">
-      <div v-for="data in restaurant_meals" :key="data" class="w-1/2 mx-auto mb-12 rounded-lg transform hover:translate-y-2 hover:shadow-xl transition duration-300 bg-white p-5">
+      <div v-for="data in restaurant_meals" :key="data" class="lg:w-3/6 w-5/6 mx-auto mb-12 rounded-lg transform hover:translate-y-2 hover:shadow-xl transition duration-300 bg-white p-5">
       <img :src="data.img_url" alt=""  class="rounded-lg w-52 h-32 my-5 mx-auto">
       <div class="grid grid-cols-2 p-5">
         <h4 class="font-bold text-xl text-yellow-700 text-left">{{data.name}}</h4>
@@ -48,7 +48,11 @@
         },
         methods:{
           async viewResto(){
-            await axios.get('http://localhost:8000/meal/showby/2')
+            await axios.get('http://localhost:8000/meal/showby/2'
+            ).then((response)=>{
+              console.log(response.data)
+              this.$router.push('/dine')
+            })
           }
         }
     }

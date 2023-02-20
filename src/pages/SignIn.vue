@@ -10,11 +10,17 @@
     </div>
     <div>
       <div class="mb-4 text-lg">
-        <input v-model="params.username" class="border-none bg-gray-400 bg-opacity-50 px-6 py-4 rounded-md text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="name" placeholder="username" />
+        <input v-model="params.username" class="border-none bg-gray-400 bg-opacity-50 px-6 py-4 rounded-md text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="name" placeholder="Username" />
       </div>
 
       <div class="mb-4 text-lg">
         <input v-model="params.email" class="border-none bg-gray-400 bg-opacity-50 px-6 py-4 rounded-md  text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="email" placeholder="id@gmail.com" />
+      </div>
+      <div class="mb-4 text-lg">
+        <input v-model="params.phone_number" class="border-none bg-gray-400 bg-opacity-50 px-6 py-4 rounded-md  text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="phone" placeholder="Phone number" />
+      </div>
+      <div class="mb-4 text-lg">
+        <input v-model="params.address" class="border-none bg-gray-400 bg-opacity-50 px-6 py-4 rounded-md  text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="address" placeholder="Address" />
       </div>
       <div class="mb-4 text-lg">
         <input v-model="params.password" class="border-none bg-gray-400 bg-opacity-50 px-6 py-4 rounded-md  text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="Password" name="password" placeholder="*********" />
@@ -61,6 +67,8 @@
         params:{
             username: "",
             email:"",
+            phone_number:"",
+            address:"",
             password:""
         }
       };
@@ -69,22 +77,29 @@
       LoopingRhombusesSpinner,
       // Select2
     },
+    mounted() {
+      localStorage.clear("token","user_id");
+
+    },
     methods:{
        async clickSigin(){
         this.isLoading = true;
-        if(this.params.username && this.params.email && this.params.password){
+        if(this.params.username && this.params.email && this.params.password && this.params.phone_number && this.params.address){
          await axios.post('http://localhost:8000/users/register',{
             username:this.params.username,
             email:this.params.email,
+            phone_number:this.params.phone_number,
+            address:this.params.address,
             password:this.params.password
          }).then((response)=>{
             console.log(response.data.errcode)
             if(response.data.errcode === 200){
               localStorage.setItem('token',response.data.token)
+              localStorage.setItem('user_id',response.data.user_id)
              this.$router.push('/')    
              this.isLoading = false;          
             }else{
-              alert("Authentication Failed!");
+              alert("Registration Failed!");
               this.isLoading = false;          
             }
          }).catch((error)=>{

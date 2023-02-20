@@ -13,7 +13,7 @@
       background-size: cover;"
      >
         <!--header-->
-        <header class="w-full text-3xl bg-transparent shadow-lg">
+      <header class="w-full text-3xl bg-transparent shadow-lg">
         <div>
           <div class="bg-transparent text-3xl">
             <nav
@@ -103,64 +103,14 @@
                 <li class=" text-2xl font-bold text-stone-400 hover:text-gray-400">
                   Our Menu
                 </li>  
-                <button @click="detailModal">
-                  <li class=" text-2xl font-bold text-stone-400  hover:text-gray-400">
-                  Order
-                </li>
-                </button>              
+                           
                 
               </ul>
             </nav>
           </div>
         </div>
       </header>
-
-      
-      <transition name="bounce" class="right-40 top-24 fixed">  
-        <div v-if="isShowDetails" class="">          
-          <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 ">
-              <div class="flex mt-5 items-center justify-between mb-4">
-                  <h5 class="text-xl font-bold leading-none text-center border-b-2 text-gray-900 w-full">Your Order</h5>
-                  
-            </div>
-            <div class="flow-root">
-                  <ul v-for="data in reservations" :key="data" role="list" class="divide-y divide-gray-200 ">
-                      <li class="py-3 sm:py-4">
-                          <div class="flex items-center space-x-4">
-                              <div class="flex-shrink-0">
-                                  <img class="w-12 h-12 rounded-full" :src="data.img_url">
-                              </div>
-                              <div class="flex-1 min-w-0">
-                                  <p class="text-sm font-medium text-gray-900 truncate ">
-                                      {{data.name}}
-                                  </p>
-                                  <div>
-                                      <input type="number" id="quantity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="choose quantity" required>
-                                  </div>
-                                  <!-- <p class="text-sm text-gray-500 truncate">
-                                      email@windster.com
-                                  </p> -->
-                              </div>
-                              <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                  {{ data.price }}
-                              </div>
-                          </div>
-                      </li>
-                  </ul>
-                  <div class="flex mt-5 gap-5 items-center justify-between mb-4">
-                    <input type="text" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 " placeholder="yyyy-mm-dd" required>
-                    <input type="text" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 " placeholder="Table number" required>  
-                </div>
-                <p class="p-5">Total Price:  </p>  
-                  <button class="bg-yellow-700 w-full text-white font-bold py-2 px-4 rounded">
-                    Button
-                  </button>
-                  <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,288L30,277.3C60,267,120,245,180,213.3C240,181,300,139,360,144C420,149,480,203,540,197.3C600,192,660,128,720,90.7C780,53,840,43,900,58.7C960,75,1020,117,1080,149.3C1140,181,1200,203,1260,202.7C1320,203,1380,181,1410,170.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg> -->
-            </div>
-          </div>
-        </div>      
-    </transition>
-        <!--hero section-->
+      <!--hero section-->
         <div class="container top-10 grid grid-cols-2  " style="font-family: cursive; color:#c49b63">
           <div class=" flex flex-col ">
             <p class="-mt-10 text-7xl text-white">
@@ -209,41 +159,7 @@
                   </li>
                 </ul>
           </div>
-<!--          Reservation form-->
-          <!-- <div class="rounded-t-md sm:col-span-1 col-span-2 w-full m-3 p-5 mb-6 md:mb-0" style="background-color:#c49b63;">
-
-            <form>
-              <p class="text-center text-lg underline">Make Your Reservation</p>
-
-              <div class="relative z-0 w-full mb-6 group">
-                <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-b-black appearance-none  focus:outline-none focus:ring-0 focus:border-white peer" placeholder=" " required />
-                <label for="floating_email" class="peer-focus:font-medium absolute text-sm  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0   peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First Name</label>
-              </div>
-
-              <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 w-full mb-6 group">
-                  <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-b-black appearance-none focus:outline-none focus:ring-0 focus:border-white peer" placeholder=" " required />
-                  <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Date</label>
-                </div>
-                <div class="relative z-0 w-full mb-6 group">
-                  <input type="text" name="floating_last_name" id="floating_last_name" class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-b-black appearance-none  focus:outline-none focus:ring-0 focus:border-white peer" placeholder=" " required />
-                  <label for="floating_last_name" class="peer-focus:font-medium absolute text-sm  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Time</label>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 w-full mb-6 group">
-                  <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-b-black appearance-none focus:outline-none focus:ring-0 focus:border-white peer" placeholder=" " required />
-                  <label for="floating_phone" class="peer-focus:font-medium absolute text-sm   duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0   peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Amount</label>
-                </div>
-                <div class="relative z-0 w-full mb-6 group">
-                  <input type="text" name="floating_company" id="floating_company" class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-b-black  appearance-none  focus:outline-none focus:ring-0 focus:border-white peer" placeholder=" " required />
-                  <label for="floating_company" class="peer-focus:font-medium absolute text-xs  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0   peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Table Number</label>
-                </div>
-              </div>
-              <button type="submit" class="text-white bg-yellow-700 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
-            </form>
-          </div> -->
-        </div>
+         </div>
     </div>
       <!--    info card counter section-->
       <div class="py-5 ">
@@ -364,6 +280,62 @@
         </div>
       </main>
     </div>
+    <div v-if="isShowDetails">
+      <p class="text-4xl text-center text-red-600 font-bold m-5 border-b-2 border-white shadow-b-lg" style="font-family: cursive;">Make a Reservation</p>
+      <div class="grid grid-cols-2  lg:w-1/2 w-full lg:ml-96  -mr-32 p-10">
+        <div class="element-container max-w-md p-4 bg-white border border-gray-200  shadow sm:p-8 ml-32">
+                
+      </div>
+      <div class="max-w-md p-4 bg-white border border-gray-200 shadow sm:p-8 ">
+                <div class="flex mt-5 items-center justify-between mb-4">
+                  <h5 class="text-xl font-bold leading-none text-center border-b-2 text-gray-900 w-full">Your Order</h5>                  
+                </div>
+                <div class="flow-root">   
+                                
+                  <div class="flex items-center space-x-4 divide-y divide-gray-200">
+                    
+                    <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+                      <div class="relative z-0">
+                          <input v-model="reserve.name" type="text" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
+                          <label for="floating_standard" class="absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Meal</label>
+                      </div>
+                      <div class="relative z-0">
+                          <input v-model="reserve.quantity" type="number" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
+                          <label for="floating_standard" class="absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Quantity</label>
+                      </div>              
+                      <p class="text-gray-500 ">Price: {{ reserve.price }} XAF</p>
+                      <p class="text-gray-500 font-bold">Delivery fee: 1000 XAF </p>
+                      <p class="text-green-500 text-sm mt-2 border-b-2 border-black text-center">Please fill the remaining fields if you want to reserve a table </p>
+                      <div class="flex mt-5 gap-5 items-center justify-between mb-4">
+                        <div class="relative z-0">
+                          <input v-model="reserve.reservation_date" type="text" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
+                          <label for="floating_standard" class="absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">dd-mm-yyyy</label>
+                        </div>
+                        <div class="relative z-0">
+                            <input v-model="reserve.number_seats" type="text" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
+                            <label for="floating_standard" class="absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Number of seats</label>
+                        </div>
+                      </div>
+                      <p class="text-gray-500 font-bold">Reservation fee: 2500 XAF </p>
+                      <div class="flex items-center justify-between">   
+                        <!-- <p class="text-gray-500 font-bold">Amount:  </p>
+                        <div class="relative z-0">
+                          <input v-model="reserve.amount" type="text" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
+                          <label for="floating_standard" class="absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Amount</label>
+                      </div>               -->
+                      </div>
+                      
+                      <button @click="confirmReserve" class="bg-red-600 w-full text-white font-bold py-2 px-4 rounded">
+                          Confirm
+                        </button>
+                    </div>
+                  </div>                 
+                </div>
+      </div>
+
+      </div>    
+    </div>
+   
       <!--    menu-->
     <div id="menu" class="grid place-items-center mt-10 " style="font-family: 'Muli', sans-serif;">
       <div class="container ml-auto mr-auto flex justify-center flex-wrap items-start">
@@ -389,7 +361,7 @@
                   <div class="text-lg font-bold text-black">
                     {{data.price}} XAF
                   </div>
-                  <button @click="chooseMeal(data.id,data.restaurant_id,data.price)"  class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
+                  <button @click="detailModal(data.id,data.restaurant_id,data.price)"  class="rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex ml-auto transition duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
                       <line x1="12" y1="5" x2="12" y2="19"></line>
                       <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -485,16 +457,30 @@ export default {
   data(){
     return{
     showMenu:false,
-    showDetails:false,
+    showDetails:true,
     services:'./src/images/services.png',
     heroImg:'./src/images/coffee-hero.avif',
     menus:[],
     reservations:[],
     total_price : null,
+    reserve:{
+      name:'',
+      restaurant_id:'',
+      user_id:'',
+      quantity:'',
+      meal_id:'',
+      price:'',
+      number_seats:'',
+      reservation_date:'',
+      amount:''
+    },
+    delivery_price:1000,
+    reserve_price:2500
 
     }
   },
   async mounted() {
+    this.showDetails = false
     await axios.get("http://localhost:8000/meal/showby/1"
     ).then((response)=>{
       console.log(response.data);
@@ -511,62 +497,112 @@ export default {
       return this.showDetails;
     }
   },
-  // async mounted(){
-  //   await axios.get("http://localhost:8000/resto-meal-show/1"
-  //   ).then((response)=>{
-  //     console.log(response.data)
-  //     this.menus = response.data
-  //     console.log(this.menus[0].img_url)
-  //   })
-  // },
   methods:{
-    async detailModal(){
+    // load meal by id to the reservation form when modal opens after clicking on meal buttton
+    //meal id for api is gotten when clicked on meall button
+  async detailModal(id,restaurant_id, price){
       console.log("why tf")
+      this.user_id = localStorage.getItem("user_id")
+      console.log(this.user_id)
     this.showDetails = !this.showDetails;
-    await axios.get(`http://localhost:8000/reservation_specific/1/1`
+    await axios.get(`http://localhost:8000/meal/show/` +id
     ).then((response)=>{
-      console.log(response.data)
+      console.log("to reserve",response.data)
+      this.reserve.price = response.data.price
+      this.reserve.name = response.data.name
       this.reservations = response.data;
+      this.reserve.restaurant_id = response.data.restaurant_id
+      this.reserve.meal_id = id
       
     })
   },
-  async chooseMeal(id,rest_id,price) {
-      await axios.post("http://localhost:8000/reservation-create",
+  async confirmReserve(){
+    console.log("reserve")
+    this.reserve.user_id = localStorage.getItem("user_id")
+    console.log(this.reserve.restaurant_id, this.reserve.user_id, this.reserve.quantity)
+    
+    if(this.reserve.restaurant_id && this.reserve.quantity && this.reserve.meal_id && this.reserve.user_id ){
+      console.log("data ok")
+      // condition for dine in
+      if(this.reserve.reservation_date && this.reserve.number_seats)
       {
-          restaurant_id:rest_id,
-          meal_id:id,
-          table_number:5,
-          tourist_id:1,
-          amount:price,
-          date:"16/02/2023",
-          status:'Confirmed'
-      }).then((response)=>{
-        console.log("this",response.data)
-    })
+        this.reserve.amount = this.reserve.price * this.reserve.quantity + this.reserve_price
+        await axios.post("http://localhost:8000/reservation-create",{
+          restaurant_id:this.reserve.restaurant_id,
+          quantity:this.reserve.quantity,
+          meal_id:this.reserve.meal_id,
+          user_id:this.reserve.user_id,
+          number_seats:this.reserve.number_seats,
+          reservation_date:this.reserve.reservation_date,
+          amount:this.reserve.amount
+        }
+        ).then((response)=>{
+          console.log(response.data)
+          this.reservations = response.data;
+          alert(response.data)          
+          this.reserve.reservation_date = null;
+          this.reserve.number_seats = null;
+          this.reserve.amount = null;
+          this.reserve.name = null;
+          this.reserve.restaurant_id = null;
+          this.reserve.quantity = null;
+          this.reserve.meal_id = null;
+          this.reserve.user_id = null;
+          this.reserve.price = null;
+          this.showDetails = false;
+        })
+      }else {
+        this.reserve.amount = this.reserve.price * this.reserve.quantity + this.delivery_price 
+        await axios.post("http://localhost:8000/reservation-create",{
+          restaurant_id:this.reserve.restaurant_id,
+          quantity:this.reserve.quantity,
+          meal_id:this.reserve.meal_id,
+          user_id:this.reserve.user_id,
+          amount:this.reserve.amount
+        }
+        ).then((response)=>{
+          console.log(response.data)
+          alert(response.data)          
+          this.reservations = response.data;
+          this.reserve.amount = null;
+          this.reserve.restaurant_id = null;
+          this.reserve.quantity = null;
+          this.reserve.meal_id = null;
+          this.reserve.user_id = null;
+          this.showDetails = false;
+        })
+      }
+    }
+  },
+  // async chooseMeal(id,rest_id,price) {
+  //     await axios.post("http://localhost:8000/reservation-create",
+  //     {
+  //         restaurant_id:rest_id,
+  //         meal_id:id,
+  //         table_number:5,
+  //         tourist_id:1,
+  //         amount:price,
+  //         date:"16/02/2023",
+  //         status:'Confirmed'
+  //     }).then((response)=>{
+  //       console.log("this",response.data)
+  //   })
 
-      // this.emitter.emit('choose-meal', id, rest_id);
+  //     // this.emitter.emit('choose-meal', id, rest_id);
 
-  }
+  // }
   },
 };
 </script>
 
 <style>
-/* .main{
-  background-image:url("https://images.unsplash.com/photo-1525947088131-b701cd0f6dc3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60") !important;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-} */
-/* .hero{
-  background-color:rgb(44, 5, 5);
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+
 header{
   position: fixed !important;
 }
-
+.order-card{
+  background-image:url('../images/cook.png');
+}
 /* .blur{
   opacity: 0.2;
   position:relative !important;

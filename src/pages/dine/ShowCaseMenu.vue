@@ -1,7 +1,6 @@
 <template>
   <div class="flex items-center w-screen min-h-screen" style="font-family: 'Muli', sans-serif">
-    <div class="container ml-auto mr-auto flex justify-center flex-wrap items-start">
-      
+    <div class="container ml-auto mr-auto flex justify-center flex-wrap items-start">      
       <!--      our services-->
       <div class="py-5">
         <main class="h-full overflow-y-auto">
@@ -255,10 +254,11 @@
         </main>
       </div>
       <!--menu section-->
-      <div class=" w-full pl-5 lg:pl-2 mb-4 mt-4">
-        <p class="text-4xl text-center font-medium m-5 border-b-2 border-gray-200 shadow-b-lg">Our Menu</p>
-
-      </div>
+      <div class="w-full pl-5 lg:pl-2 mb-4 mt-4">
+          <h1 class="text-3xl text-center border-b-2 border-white lg:text-4xl text-red-600 font-extrabold" style="font-family: cursive;">
+            Our Menu
+          </h1>
+        </div>
       <div class="menu grid gap-6 mb-8 grid-cols-2 xl:grid-cols-4">
         <div v-for="data in menus" :key="data" class="mr-10">
           <div
@@ -282,14 +282,12 @@
                 <div class="text-lg text-yellow-700 font-bold">
                   {{data.price}} XAF                
                 </div>
-                <div v-if="data.status === 'Available'">
-                  <button   @click="chooseMeal(data.id,data.restaurant_id,data.price)" class="ml-5 rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex transition duration-300">
+                  <button   @click="detailModal(data.id,data.restaurant_id,data.price)" class="ml-5 rounded-full bg-black text-white hover:bg-white hover:text-black hover:shadow-xl focus:outline-none w-10 h-10 flex transition duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current m-auto">
                     <line x1="12" y1="5" x2="12" y2="19"></line>
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                   </svg>
                 </button>
-                </div>               
               </div>
 
             </div>
@@ -298,6 +296,62 @@
         </div>
     </div>
   </div>
+  
+  <div v-if="isShowDetails">
+      <p class="text-4xl text-center text-red-600 font-bold m-5 border-b-2 border-white shadow-b-lg" style="font-family: cursive;">Make a Reservation</p>
+      <div class="grid grid-cols-2  lg:w-1/2 w-full lg:ml-96  -mr-32 p-10">
+        <div class="element-container max-w-md p-4 bg-white border border-gray-200  shadow sm:p-8 ml-32">
+                
+      </div>
+      <div class="max-w-md p-4 bg-white border border-gray-200 shadow sm:p-8 ">
+                <div class="flex mt-5 items-center justify-between mb-4">
+                  <h5 class="text-xl font-bold leading-none text-center border-b-2 text-gray-900 w-full">Your Order</h5>                  
+                </div>
+                <div class="flow-root">   
+                                
+                  <div class="flex items-center space-x-4 divide-y divide-gray-200">
+                    
+                    <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+                      <div class="relative z-0">
+                          <input v-model="reserve.name" type="text" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
+                          <label for="floating_standard" class="absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Meal</label>
+                      </div>
+                      <div class="relative z-0">
+                          <input v-model="reserve.quantity" type="number" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
+                          <label for="floating_standard" class="absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Quantity</label>
+                      </div>              
+                      <p class="text-gray-500 ">Price: {{ reserve.price }} XAF</p>
+                      <p class="text-gray-500 font-bold">Delivery fee: 1000 XAF </p>
+                      <p class="text-green-500 text-sm mt-2 border-b-2 border-black text-center">Please fill the remaining fields if you want to reserve a table </p>
+                      <div class="flex mt-5 gap-5 items-center justify-between mb-4">
+                        <div class="relative z-0">
+                          <input v-model="reserve.reservation_date" type="text" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
+                          <label for="floating_standard" class="absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">dd-mm-yyyy</label>
+                        </div>
+                        <div class="relative z-0">
+                            <input v-model="reserve.number_seats" type="text" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
+                            <label for="floating_standard" class="absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Number of seats</label>
+                        </div>
+                      </div>
+                      <p class="text-gray-500 font-bold">Reservation fee: 2500 XAF </p>
+                      <div class="flex items-center justify-between">   
+                        <!-- <p class="text-gray-500 font-bold">Amount:  </p>
+                        <div class="relative z-0">
+                          <input v-model="reserve.amount" type="text" id="floating_standard" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-red-600 peer" placeholder=" " />
+                          <label for="floating_standard" class="absolute text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Amount</label>
+                      </div>               -->
+                      </div>
+                      
+                      <button @click="confirmReserve" class="bg-red-600 w-full text-white font-bold py-2 px-4 rounded">
+                          Confirm
+                        </button>
+                    </div>
+                  </div>                 
+                </div>
+      </div>
+
+      </div>    
+    </div>
   <footer class="bg-black h-1/6">
     <div class="grid grid-cols-3 gap-8 px-6 py-2 md:grid-cols-3">
       <div>
@@ -452,13 +506,22 @@ export default {
   data() {
     return {
       menus:[],
+      reservations:[],
+    total_price : null,
+      showDetails:true,
+      reserve:{
+      name:'',
       restaurant_id:'',
+      user_id:'',
+      quantity:'',
       meal_id:'',
-      table_number:'',
-      tourist_id:'',
-      amount:'',
-      date:'',
-      status:''
+      price:'',
+      number_seats:'',
+      reservation_date:'',
+      amount:''
+    },
+    delivery_price:1000,
+    reserve_price:2500
     }
   },
   async mounted() {
@@ -473,29 +536,96 @@ export default {
       console.log("filtered", this.menus)
     })
   },
+  computed:{
+    isShowDetails(){
+      return this.showDetails;
+    }
+  },
   methods: {
-    async chooseMeal(id,rest_id,price) {
-      await axios.post("http://localhost:8000/reservation-create",
-      {
-          restaurant_id:rest_id,
-          meal_id:id,
-          table_number:5,
-          tourist_id:1,
-          amount:price,
-          date:"13/02/2023",
-          status:'Confirmed'
-      }).then((response)=>{
-        console.log("this",response.data)
+     // load meal by id to the reservation form when modal opens after clicking on meal buttton
+    //meal id for api is gotten when clicked on meall button
+  async detailModal(id,restaurant_id, price){
+      console.log("why tf")
+      this.user_id = localStorage.getItem("user_id")
+      console.log(this.user_id)
+    this.showDetails = !this.showDetails;
+    await axios.get(`http://localhost:8000/meal/show/` +id
+    ).then((response)=>{
+      console.log("to reserve",response.data)
+      this.reserve.price = response.data.price
+      this.reserve.name = response.data.name
+      this.reservations = response.data;
+      this.reserve.restaurant_id = response.data.restaurant_id
+      this.reserve.meal_id = id
+      
     })
-
-      // this.emitter.emit('choose-meal', id, rest_id);
-
-  }
+  },  
+  async confirmReserve(){
+    console.log("reserve")
+    this.reserve.user_id = localStorage.getItem("user_id")
+    console.log(this.reserve.restaurant_id, this.reserve.user_id, this.reserve.quantity)
+    
+    if(this.reserve.restaurant_id && this.reserve.quantity && this.reserve.meal_id && this.reserve.user_id ){
+      console.log("data ok")
+      // condition for dine in
+      if(this.reserve.reservation_date && this.reserve.number_seats)
+      {
+        this.reserve.amount = this.reserve.price * this.reserve.quantity + this.reserve_price
+        await axios.post("http://localhost:8000/reservation-create",{
+          restaurant_id:this.reserve.restaurant_id,
+          quantity:this.reserve.quantity,
+          meal_id:this.reserve.meal_id,
+          user_id:this.reserve.user_id,
+          number_seats:this.reserve.number_seats,
+          reservation_date:this.reserve.reservation_date,
+          amount:this.reserve.amount
+        }
+        ).then((response)=>{
+          console.log(response.data)
+          this.reservations = response.data;
+          alert(response.data)          
+          this.reserve.reservation_date = null;
+          this.reserve.number_seats = null;
+          this.reserve.amount = null;
+          this.reserve.name = null;
+          this.reserve.restaurant_id = null;
+          this.reserve.quantity = null;
+          this.reserve.meal_id = null;
+          this.reserve.user_id = null;
+          this.reserve.price = null;
+          this.showDetails = false;
+        })
+      }else {
+        this.reserve.amount = this.reserve.price * this.reserve.quantity + this.delivery_price 
+        await axios.post("http://localhost:8000/reservation-create",{
+          restaurant_id:this.reserve.restaurant_id,
+          quantity:this.reserve.quantity,
+          meal_id:this.reserve.meal_id,
+          user_id:this.reserve.user_id,
+          amount:this.reserve.amount
+        }
+        ).then((response)=>{
+          console.log(response.data)
+          alert(response.data)          
+          this.reservations = response.data;
+          this.reserve.amount = null;
+          this.reserve.restaurant_id = null;
+          this.reserve.quantity = null;
+          this.reserve.meal_id = null;
+          this.reserve.user_id = null;
+          this.showDetails = false;
+        })
+      }
+    }
+  },    
 }
 };
 </script>
 
 <style>
+.order-card{
+  background-image:url('../images/cook.png');
+}
 .menu-img {
   border-radius: 50%;
 }
@@ -504,5 +634,16 @@ export default {
 }
 .menu {
   position: relative;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>

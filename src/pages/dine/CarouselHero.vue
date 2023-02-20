@@ -110,61 +110,11 @@
                 <li class=" text-2xl font-bold text-yellow-500  hover:text-gray-400">
                   Our Menu
                 </li>  
-                <button @click="detailModal">
-                  <li class=" text-2xl font-bold text-yellow-500  hover:text-gray-400">
-                  Cart
-                </li>
-                </button>              
-                
               </ul>
             </nav>
           </div>
         </div>
       </header>
-      <transition name="bounce" class="right-40 top-24 fixed">  
-        <div v-if="isShowDetails" class="">          
-          <div class="w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 ">
-              <div class="flex mt-5 items-center justify-between mb-4">
-                  <h5 class="text-xl font-bold leading-none text-center border-b-2 text-gray-900 w-full">Your Order</h5>
-                  
-            </div>
-            <div class="flow-root">
-                  <ul v-for="data in reservations" :key="data" role="list" class="divide-y divide-gray-200 ">
-                      <li class="py-3 sm:py-4">
-                          <div class="flex items-center space-x-4">
-                              <div class="flex-shrink-0">
-                                  <img class="w-12 h-12 rounded-full" :src="data.img_url">
-                              </div>
-                              <div class="flex-1 min-w-0">
-                                  <p class="text-sm font-medium text-gray-900 truncate ">
-                                      {{data.name}}
-                                  </p>
-                                  <div>
-                                      <input type="number" id="quantity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="choose quantity" required>
-                                  </div>
-                                  <!-- <p class="text-sm text-gray-500 truncate">
-                                      email@windster.com
-                                  </p> -->
-                              </div>
-                              <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
-                                  {{ data.price }}
-                              </div>
-                          </div>
-                      </li>
-                  </ul>
-                  <div class="flex mt-5 gap-5 items-center justify-between mb-4">
-                    <input type="text" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 " placeholder="yyyy-mm-dd" required>
-                    <input type="text" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 " placeholder="Table number" required>  
-                </div>
-                <p class="p-5">Total Price: </p>  
-                  <button class="bg-yellow-700 w-full text-white font-bold py-2 px-4 rounded">
-                    Button
-                  </button>
-                  <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,288L30,277.3C60,267,120,245,180,213.3C240,181,300,139,360,144C420,149,480,203,540,197.3C600,192,660,128,720,90.7C780,53,840,43,900,58.7C960,75,1020,117,1080,149.3C1140,181,1200,203,1260,202.7C1320,203,1380,181,1410,170.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg> -->
-            </div>
-          </div>
-        </div>      
-    </transition>
 </div>
 
 
@@ -186,14 +136,14 @@ export default{
     text:'Dine in',
     active: 0,
     showMenu: false,
-    showDetails:false,
-    reservations:[],
+    // showDetails:false,
+    // reservations:[],
 
   }),
   computed:{
-    isShowDetails(){
-      return this.showDetails;
-    }
+    // isShowDetails(){
+    //   return this.showDetails;
+    // }
   },
   mounted() {
     
@@ -207,19 +157,17 @@ export default{
     }, 2000);
   },
   methods:{
-    async detailModal(){
-      this.loadIds
-    this.showDetails = !this.showDetails;
-    await axios.get(`http://localhost:8000/reservation_specific/3/1`
-    ).then((response)=>{
-      console.log(response.data)
-      this.reservations = response.data;
-    })
-  },
+  //   async detailModal(){
+  //     this.loadIds
+  //   this.showDetails = !this.showDetails;
+  //   await axios.get(`http://localhost:8000/reservation_specific/3/1`
+  //   ).then((response)=>{
+  //     console.log(response.data)
+  //     this.reservations = response.data;
+  //   })
+  // },
   loadIds(){
-    // this.emitter.on("choose-meal", (msg)=>{
-    // console.log(msg)
-  // });
+  
   }
   }
 }
@@ -233,7 +181,6 @@ export default{
 .left-full {
   left: -100%;
 }
-
 .carousel-item {
   float: left;
   position: relative;
@@ -242,7 +189,6 @@ export default{
   margin-right: -100%;
   backface-visibility: hidden;
 }
-
 .carousel-item.active {
   left: 0;
 }
@@ -270,13 +216,6 @@ video {
   background-image: url(" ../../images/cook.png");
 
 }
-/* .blur{
-  opacity: 0.2;
-  position:relative !important;
-}
-.check{
-  position:relative !important;
-} */
 .bounce-enter-active {
   animation: bounce-in 0.5s;
 }
