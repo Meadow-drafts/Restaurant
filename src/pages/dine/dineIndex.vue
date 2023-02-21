@@ -728,9 +728,10 @@ export default {
     isLoading:false,
       menus:[],
       reservations:[],
+      userReservations:[],
     total_price : null,
       showDetails:false,
-      showCart:true,
+      showCart:false,
       reserve:{
       name:'',
       restaurant_id:'',

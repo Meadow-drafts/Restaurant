@@ -65,7 +65,7 @@ export default {
     LoopingRhombusesSpinner,
   },
     mounted() {
-      localStorage.clear("token","user_id");
+      // localStorage.clear("token","user_id");
 
     },
   methods:{
