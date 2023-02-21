@@ -519,6 +519,7 @@ export default {
       reservations:[],
     total_price : null,
       showDetails:false,
+      showCart:false,
       reserve:{
       name:'',
       restaurant_id:'',
@@ -549,6 +550,9 @@ export default {
   computed:{
     isShowDetails(){
       return this.showDetails;
+    },
+    isShowCart(){
+      return this.showCart;
     }
   },
   methods: {

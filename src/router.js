@@ -4,6 +4,7 @@ import Signin from "./pages/SignIn.vue";
 import Hero from "./pages/coffee/Hero.vue"
 import dineIndex from "./pages/dine/dineIndex.vue";
 import RestoOptions from "./pages/RestoOptions.vue";
+import viewReservation from "./pages/viewReservation.vue";
 // import firstOption from "./pages/components/firstOption.vue"
 
 const routerHistory = createWebHistory()
@@ -30,6 +31,10 @@ const router = createRouter({
     {
       path: '/dine',
       component: dineIndex
+    },
+    {
+      path: '/view',
+      component: viewReservation
     },
 
   ]

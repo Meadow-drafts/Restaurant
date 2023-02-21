@@ -4,7 +4,6 @@
     style="background-image: url('../../images/fast-food.jpg')!important;
     background-repeat: no-repeat;
     background-size: cover;"
-    
     >
       <span id="blackOverlay" class="w-full h-full absolute opacity-0 bg-white"></span>
       <div class="relative  pt-16 pb-32 flex content-center items-center justify-center" 
@@ -12,6 +11,7 @@
       background-repeat: no-repeat;
       background-size: cover;"
      >
+     
         <!--header-->
       <header class="w-full text-3xl bg-transparent shadow-lg">
         <div>
@@ -101,7 +101,7 @@
                   Services
                 </li>
                 <li class=" text-2xl font-bold text-stone-400 hover:text-gray-400">
-                  Our Menu
+                |<button @click="detailCart">Reservation</button> 
                 </li>  
                            
                 
@@ -374,6 +374,92 @@
           </div>
       </div>
     </div>
+    <!-- Show reservation details -->
+    <transition name="bounce" class="right-40 top-24 fixed w-auto">  
+    <div  v-if="isShowCart" class="">
+      <div @click="detailModal" class="p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 ">
+        <div class="overflow-x-auto p-3">
+                <table class="table-auto w-full">
+                    <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
+                        <tr>
+                            <th class="p-2">
+                                <div class="font-semibold text-left">Meal</div>
+                            </th>
+                            <th class="p-2">
+                                <div class="font-semibold text-left">Quantity</div>
+                            </th>
+                            <th class="p-2">
+                                <div class="font-semibold text-left">Number of Seats</div>
+                            </th>
+                            <th  class="p-2">
+                                <div class="font-semibold text-left">Date</div>
+                            </th>
+                            <th class="p-2">
+                                <div class="font-semibold text-left">Amount</div>
+                            </th>
+                            <th class="p-2">
+                                <div class="font-semibold text-left">Status</div>
+                            </th>
+                            <th class="p-2">
+                                <div class="font-semibold text-center">Action</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm divide-y divide-gray-100">
+                        <!-- record 1 -->
+                        <tr v-for="data in userReservations" :key="data.id">
+                            <td class="p-2">
+                                <div class="font-medium text-gray-800">
+                                    {{data.name}}
+                                </div>
+                            </td>
+                            <td class="p-2">
+                                <div class="text-left">{{data.quantity}}</div>
+                            </td>
+                            <td  class="p-2">
+                                <div class="text-left font-medium text-gray-800">
+                                    {{data.number_seats}}
+                                </div>
+                            </td>
+                            <td class="p-2">
+                                <div class="text-left font-medium text-gray-800">
+                                    {{data.date}}
+                                </div>
+                            </td>
+                            <td class="p-2">
+                                <div class="text-left font-medium text-gray-800">
+                                    {{data.amount}}
+                                </div>
+                            </td>
+                            <td v-if="data.is_cancelled === 0" class="p-2">
+                                <div class="text-left font-medium text-green-500">
+                                    Confirmed
+                                </div>
+                            </td>
+                            <td v-else class="p-2">
+                                <div class="text-left font-medium text-red-500">
+                                    Cancelled
+                                </div>
+                            </td>
+                            <td class="p-2">
+                                <div class="flex justify-center">
+                                    <button @click="reservationStatus(data.id, data.is_cancelled)">
+                                      <svg v-if="data.is_cancelled === 0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                      </svg>
+                                      <svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                      </svg>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div> 
+    </div>      
+</transition>
     
   
     
@@ -462,11 +548,13 @@ export default {
   data(){
     return{
     showMenu:false,
-    showDetails:true,
+    showDetails:false,
+    showCart:false,
     services:'./src/images/services.png',
     heroImg:'./src/images/coffee-hero.avif',
     menus:[],
     reservations:[],
+    userReservations:[],
     total_price : null,
     reserve:{
       name:'',
@@ -500,9 +588,50 @@ export default {
   computed:{
     isShowDetails(){
       return this.showDetails;
+    },
+    isShowCart(){
+      return this.showCart;
     }
   },
   methods:{
+
+    //load cart to view reservations
+
+    async detailCart(){
+      console.log("ur cart")
+      let user_id = localStorage.getItem("user_id")
+      let rest_id = localStorage.getItem("restaurant_id")
+      this.showCart = !this.showCart;
+      await axios.get("http://localhost:8000/reservation/user/"+ user_id + '/1'
+      ).then((response)=>{
+        console.log(response.data.data);
+        let datas = response.data.data;
+        this.userReservations = datas;
+      })
+    },
+
+    //Cancel reservation
+    async reservationStatus(id, is_cancelled){
+      console.log("urs",id, is_cancelled);
+
+      if(is_cancelled === 0){
+        await axios.put("http://localhost:8000/reservation-status/"+id,{
+           is_cancelled :1
+      }).then((response)=>{
+          console.log("succes",response.data.data)
+       })
+      }else{
+        await axios.put("http://localhost:8000/reservation-status/"+id,{
+           is_cancelled : 0
+      }).then((response)=>{
+          console.log("cancelled",response.data.data)
+       })
+      }
+      this.detailCart()
+
+      
+
+    },
     // load meal by id to the reservation form when modal opens after clicking on meal buttton
     //meal id for api is gotten when clicked on meall button
   async detailModal(id,restaurant_id, price){
