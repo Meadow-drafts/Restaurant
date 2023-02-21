@@ -146,7 +146,7 @@ export default{
     // }
   },
   mounted() {
-    
+    let token = localStorage.getItem('token')
       let i = 0;
     setInterval(() => {
       if (i > this.images.length - 1) {

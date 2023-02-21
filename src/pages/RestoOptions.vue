@@ -103,17 +103,6 @@
       </div>
     </div>
   </header>
-
-
-
-
-
-
-
-
-
-
-
   <section>
 		<div>
       <svg

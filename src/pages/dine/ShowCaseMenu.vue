@@ -302,7 +302,7 @@
   <div v-if="isShowDetails">
       <p class="text-4xl text-center text-red-600 font-bold m-5 border-b-2 border-white shadow-b-lg" style="font-family: cursive;">Make a Reservation</p>
       <div class="grid grid-cols-2  lg:w-1/2 w-full lg:ml-96  -mr-32 p-10">
-        <div class="element-container max-w-md p-4 bg-white border border-gray-200  shadow sm:p-8 ml-32">
+        <div class="element-container max-w-md p-4 bg-white border border-gray-200  shadow sm:p-8 ml-48">
                 
       </div>
       <div class="max-w-md p-4 bg-white border border-gray-200 shadow sm:p-8 ">
@@ -558,17 +558,24 @@ export default {
       console.log("why tf")
       this.user_id = localStorage.getItem("user_id")
       console.log(this.user_id)
-    this.showDetails = !this.showDetails;
-    await axios.get(`http://localhost:8000/meal/show/` +id
-    ).then((response)=>{
-      console.log("to reserve",response.data)
-      this.reserve.price = response.data.price
-      this.reserve.name = response.data.name
-      this.reservations = response.data;
-      this.reserve.restaurant_id = response.data.restaurant_id
-      this.reserve.meal_id = id
-      
-    })
+      let token = localStorage.getItem('token')
+      if(!token){
+        alert("please login first")
+        
+      }else{
+        this.showDetails = !this.showDetails;
+          await axios.get(`http://localhost:8000/meal/show/` +id
+          ).then((response)=>{
+            console.log("to reserve",response.data)
+            this.reserve.price = response.data.price
+            this.reserve.name = response.data.name
+            this.reservations = response.data;
+            this.reserve.restaurant_id = response.data.restaurant_id
+            this.reserve.meal_id = id
+            
+          })
+      }
+  
   },
   
   async confirmReserve(){
