@@ -65,8 +65,8 @@ export default {
     LoopingRhombusesSpinner,
   },
     mounted() {
-      // localStorage.clear("token","user_id");
-
+      localStorage.removeItem("token")
+      localStorage.removeItem("user_id")
     },
   methods:{
     async clickLogin(){

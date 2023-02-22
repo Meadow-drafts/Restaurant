@@ -78,7 +78,8 @@
       // Select2
     },
     mounted() {
-      localStorage.clear("token","user_id");
+      localStorage.removeItem("token")
+      localStorage.removeItem("user_id")
 
     },
     methods:{
