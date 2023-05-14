@@ -14,7 +14,7 @@ const router = createRouter({
   routes: [
       {
       path: '/',
-      component: RestoOptions
+      component: Hero
     },
       {
       path: '/signin',
@@ -25,9 +25,10 @@ const router = createRouter({
       component: Login
     },
     {
-      path: '/expresso',
-      component: Hero
+      path: '/options',
+      component: RestoOptions
     },
+   
     {
       path: '/dine',
       component: dineIndex

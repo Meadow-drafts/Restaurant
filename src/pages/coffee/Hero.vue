@@ -27,7 +27,7 @@
             >
               <div class="flex items-center justify-between">
                 <router-link
-                    to="/"
+                    to="/options"
                     class="
               text-xl
               font-bold
