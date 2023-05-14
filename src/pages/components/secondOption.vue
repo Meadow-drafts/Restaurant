@@ -1,10 +1,14 @@
 <template>
     <div>
         <div class="text-right my-10 text-yellow-700 mx-8 font-bold text-3xl">
-          <button @click="viewResto" class=" text-3xl ">
+          <!-- <button @click="viewResto" class=" text-3xl ">
             Yummy! Init ?!..  
             <p>see more</p>
-          </button>  
+          </button>   -->
+          <router-link to="/dine" class=" text-3xl ">
+            Yummy! Init ?!..  
+            <p>see more</p>
+      </router-link> 
         </div>
     
     
